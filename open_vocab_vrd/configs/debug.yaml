@@ -1,0 +1,61 @@
+# Debug config: fast end-to-end smoke test.
+# Purpose: verify pipeline runs, loss decreases, inference produces output.
+# Not for real metrics. Use configs/default.yaml for full runs.
+#
+# Run sequence:
+#   python scripts/preprocess_from_processed.py --config configs/debug.yaml --max_images 500
+#   python scripts/build_llm_prior_stub.py      --config configs/debug.yaml
+#   python scripts/warmup_cache.py              --config configs/debug.yaml
+#   python scripts/train.py                     --config configs/debug.yaml
+#   python scripts/eval.py  --config configs/debug.yaml --checkpoint outputs/.../best.pt
+
+data:
+  vg_raw_dir: "../vrd_project/data/raw"
+  images_dir: "../vrd_project/data/images/VG_100K"
+  processed_dir: "./data_debug"     # separate dir so it doesn't clobber full data
+  cache_dir: "./cache_debug"
+
+detector:
+  model_path: "yolov8s-world.pt"
+  vocab_file: "configs/predicates_debug.yaml"
+  top_k: 5
+  conf_thresh: 0.3
+  nms_iou: 0.5
+
+clip:
+  model: "ViT-B/32"
+  device: "cuda"
+  batch_size: 32
+
+spatial:
+  feature_dim: 13
+
+relation_head:
+  input_dim: 1037
+  hidden_dims: [256, 128]   # smaller MLP for fast debug
+  dropout: 0.2
+  use_layer_norm: true
+
+prior:
+  enabled: true
+  path: "data_debug/llm_prior.json"
+  alpha_init: 1.0
+  tau_init: 1.0
+  learnable: true
+
+training:
+  epochs: 3               # just enough to see loss move
+  batch_size: 64
+  lr: 0.001
+  weight_decay: 0.0001
+  lr_scheduler: "none"    # skip scheduler for debug
+  eval_every: 1
+
+eval:
+  recall_k: [20, 50]
+  top_k_per_image: 50
+
+cache:
+  enabled: true
+  clip_subdir: "clip_embeddings"
+  detector_subdir: "detections"

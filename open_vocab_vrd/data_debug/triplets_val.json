@@ -1,0 +1,4706 @@
+[
+  {
+    "image_id": 2355481,
+    "image_file": "2355481.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "door",
+    "predicate": "on",
+    "object_name": "bus",
+    "subject_box": [
+      271,
+      129,
+      325,
+      277
+    ],
+    "object_box": [
+      38,
+      77,
+      435,
+      287
+    ]
+  },
+  {
+    "image_id": 2355481,
+    "image_file": "2355481.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "door",
+    "predicate": "on",
+    "object_name": "bus",
+    "subject_box": [
+      271,
+      129,
+      325,
+      277
+    ],
+    "object_box": [
+      25,
+      43,
+      472,
+      305
+    ]
+  },
+  {
+    "image_id": 2377239,
+    "image_file": "2377239.jpg",
+    "image_w": 490,
+    "image_h": 380,
+    "subject_name": "sign",
+    "predicate": "near",
+    "object_name": "tree",
+    "subject_box": [
+      317,
+      151,
+      348,
+      180
+    ],
+    "object_box": [
+      368,
+      74,
+      441,
+      236
+    ]
+  },
+  {
+    "image_id": 2321279,
+    "image_file": "2321279.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "bottle",
+    "predicate": "next to",
+    "object_name": "bottle",
+    "subject_box": [
+      66,
+      88,
+      145,
+      290
+    ],
+    "object_box": [
+      131,
+      95,
+      219,
+      316
+    ]
+  },
+  {
+    "image_id": 2321279,
+    "image_file": "2321279.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "bag",
+    "predicate": "on",
+    "object_name": "table",
+    "subject_box": [
+      8,
+      181,
+      79,
+      262
+    ],
+    "object_box": [
+      9,
+      152,
+      478,
+      372
+    ]
+  },
+  {
+    "image_id": 2380532,
+    "image_file": "2380532.jpg",
+    "image_w": 420,
+    "image_h": 550,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      124,
+      436,
+      200,
+      489
+    ],
+    "object_box": [
+      98,
+      358,
+      374,
+      499
+    ]
+  },
+  {
+    "image_id": 4691,
+    "image_file": "4691.jpg",
+    "image_w": 450,
+    "image_h": 350,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      35,
+      197,
+      48,
+      221
+    ],
+    "object_box": [
+      23,
+      78,
+      390,
+      248
+    ]
+  },
+  {
+    "image_id": 4691,
+    "image_file": "4691.jpg",
+    "image_w": 450,
+    "image_h": 350,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      51,
+      195,
+      62,
+      223
+    ],
+    "object_box": [
+      23,
+      78,
+      390,
+      248
+    ]
+  },
+  {
+    "image_id": 4691,
+    "image_file": "4691.jpg",
+    "image_w": 450,
+    "image_h": 350,
+    "subject_name": "building",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      23,
+      78,
+      390,
+      248
+    ],
+    "object_box": [
+      108,
+      195,
+      118,
+      223
+    ]
+  },
+  {
+    "image_id": 4691,
+    "image_file": "4691.jpg",
+    "image_w": 450,
+    "image_h": 350,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      136,
+      137,
+      168,
+      162
+    ],
+    "object_box": [
+      23,
+      78,
+      390,
+      248
+    ]
+  },
+  {
+    "image_id": 4691,
+    "image_file": "4691.jpg",
+    "image_w": 450,
+    "image_h": 350,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      188,
+      141,
+      202,
+      166
+    ],
+    "object_box": [
+      23,
+      78,
+      390,
+      248
+    ]
+  },
+  {
+    "image_id": 4691,
+    "image_file": "4691.jpg",
+    "image_w": 450,
+    "image_h": 350,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      215,
+      144,
+      241,
+      164
+    ],
+    "object_box": [
+      23,
+      78,
+      390,
+      248
+    ]
+  },
+  {
+    "image_id": 2402329,
+    "image_file": "2402329.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "chair",
+    "predicate": "next to",
+    "object_name": "table",
+    "subject_box": [
+      257,
+      279,
+      334,
+      332
+    ],
+    "object_box": [
+      290,
+      300,
+      499,
+      331
+    ]
+  },
+  {
+    "image_id": 2331765,
+    "image_file": "2331765.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "wall",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      0,
+      209,
+      18,
+      291
+    ],
+    "object_box": [
+      3,
+      160,
+      81,
+      330
+    ]
+  },
+  {
+    "image_id": 2331765,
+    "image_file": "2331765.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "wall",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      380,
+      20,
+      428,
+      157
+    ],
+    "object_box": [
+      422,
+      90,
+      498,
+      161
+    ]
+  },
+  {
+    "image_id": 2694,
+    "image_file": "2694.jpg",
+    "image_w": 850,
+    "image_h": 590,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      570,
+      155,
+      590,
+      228
+    ],
+    "object_box": [
+      599,
+      6,
+      797,
+      489
+    ]
+  },
+  {
+    "image_id": 2694,
+    "image_file": "2694.jpg",
+    "image_w": 850,
+    "image_h": 590,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      568,
+      317,
+      596,
+      399
+    ],
+    "object_box": [
+      493,
+      81,
+      614,
+      468
+    ]
+  },
+  {
+    "image_id": 2694,
+    "image_file": "2694.jpg",
+    "image_w": 850,
+    "image_h": 590,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      503,
+      337,
+      529,
+      406
+    ],
+    "object_box": [
+      487,
+      67,
+      604,
+      479
+    ]
+  },
+  {
+    "image_id": 2694,
+    "image_file": "2694.jpg",
+    "image_w": 850,
+    "image_h": 590,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      487,
+      346,
+      500,
+      402
+    ],
+    "object_box": [
+      449,
+      194,
+      491,
+      445
+    ]
+  },
+  {
+    "image_id": 2694,
+    "image_file": "2694.jpg",
+    "image_w": 850,
+    "image_h": 590,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      429,
+      293,
+      446,
+      326
+    ],
+    "object_box": [
+      423,
+      259,
+      453,
+      431
+    ]
+  },
+  {
+    "image_id": 2694,
+    "image_file": "2694.jpg",
+    "image_w": 850,
+    "image_h": 590,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      469,
+      245,
+      483,
+      295
+    ],
+    "object_box": [
+      447,
+      202,
+      501,
+      450
+    ]
+  },
+  {
+    "image_id": 2694,
+    "image_file": "2694.jpg",
+    "image_w": 850,
+    "image_h": 590,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      483,
+      226,
+      503,
+      269
+    ],
+    "object_box": [
+      443,
+      194,
+      499,
+      453
+    ]
+  },
+  {
+    "image_id": 2694,
+    "image_file": "2694.jpg",
+    "image_w": 850,
+    "image_h": 590,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      514,
+      221,
+      532,
+      258
+    ],
+    "object_box": [
+      502,
+      78,
+      610,
+      480
+    ]
+  },
+  {
+    "image_id": 2694,
+    "image_file": "2694.jpg",
+    "image_w": 850,
+    "image_h": 590,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      717,
+      248,
+      799,
+      476
+    ],
+    "object_box": [
+      597,
+      0,
+      795,
+      540
+    ]
+  },
+  {
+    "image_id": 1159476,
+    "image_file": "1159476.jpg",
+    "image_w": 820,
+    "image_h": 1050,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      434,
+      624,
+      478,
+      681
+    ],
+    "object_box": [
+      367,
+      526,
+      764,
+      749
+    ]
+  },
+  {
+    "image_id": 2339734,
+    "image_file": "2339734.jpg",
+    "image_w": 380,
+    "image_h": 550,
+    "subject_name": "sign",
+    "predicate": "on",
+    "object_name": "wall",
+    "subject_box": [
+      197,
+      58,
+      285,
+      174
+    ],
+    "object_box": [
+      177,
+      0,
+      332,
+      499
+    ]
+  },
+  {
+    "image_id": 2339734,
+    "image_file": "2339734.jpg",
+    "image_w": 380,
+    "image_h": 550,
+    "subject_name": "sign",
+    "predicate": "on",
+    "object_name": "wall",
+    "subject_box": [
+      264,
+      140,
+      330,
+      238
+    ],
+    "object_box": [
+      125,
+      94,
+      215,
+      243
+    ]
+  },
+  {
+    "image_id": 2339734,
+    "image_file": "2339734.jpg",
+    "image_w": 380,
+    "image_h": 550,
+    "subject_name": "sign",
+    "predicate": "on",
+    "object_name": "wall",
+    "subject_box": [
+      264,
+      140,
+      330,
+      238
+    ],
+    "object_box": [
+      88,
+      0,
+      331,
+      497
+    ]
+  },
+  {
+    "image_id": 2397418,
+    "image_file": "2397418.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "bus",
+    "subject_box": [
+      330,
+      146,
+      379,
+      187
+    ],
+    "object_box": [
+      66,
+      124,
+      437,
+      292
+    ]
+  },
+  {
+    "image_id": 2397418,
+    "image_file": "2397418.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "wall",
+    "predicate": "behind",
+    "object_name": "bus",
+    "subject_box": [
+      0,
+      185,
+      67,
+      244
+    ],
+    "object_box": [
+      66,
+      124,
+      437,
+      292
+    ]
+  },
+  {
+    "image_id": 2397418,
+    "image_file": "2397418.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "car",
+    "predicate": "in front of",
+    "object_name": "bus",
+    "subject_box": [
+      433,
+      185,
+      483,
+      235
+    ],
+    "object_box": [
+      66,
+      124,
+      437,
+      292
+    ]
+  },
+  {
+    "image_id": 2397418,
+    "image_file": "2397418.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "bus",
+    "predicate": "near",
+    "object_name": "building",
+    "subject_box": [
+      66,
+      124,
+      437,
+      292
+    ],
+    "object_box": [
+      346,
+      90,
+      499,
+      183
+    ]
+  },
+  {
+    "image_id": 2397418,
+    "image_file": "2397418.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "wall",
+    "predicate": "behind",
+    "object_name": "bus",
+    "subject_box": [
+      0,
+      185,
+      67,
+      244
+    ],
+    "object_box": [
+      66,
+      124,
+      437,
+      292
+    ]
+  },
+  {
+    "image_id": 2397418,
+    "image_file": "2397418.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "bus",
+    "predicate": "has",
+    "object_name": "window",
+    "subject_box": [
+      66,
+      124,
+      437,
+      292
+    ],
+    "object_box": [
+      150,
+      134,
+      244,
+      193
+    ]
+  },
+  {
+    "image_id": 2397418,
+    "image_file": "2397418.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "building",
+    "predicate": "has",
+    "object_name": "window",
+    "subject_box": [
+      346,
+      90,
+      499,
+      183
+    ],
+    "object_box": [
+      381,
+      125,
+      391,
+      138
+    ]
+  },
+  {
+    "image_id": 2386608,
+    "image_file": "2386608.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "bench",
+    "predicate": "next to",
+    "object_name": "wall",
+    "subject_box": [
+      43,
+      87,
+      462,
+      178
+    ],
+    "object_box": [
+      3,
+      3,
+      499,
+      163
+    ]
+  },
+  {
+    "image_id": 2349450,
+    "image_file": "2349450.jpg",
+    "image_w": 550,
+    "image_h": 370,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "bus",
+    "subject_box": [
+      128,
+      174,
+      220,
+      234
+    ],
+    "object_box": [
+      2,
+      45,
+      484,
+      321
+    ]
+  },
+  {
+    "image_id": 2349450,
+    "image_file": "2349450.jpg",
+    "image_w": 550,
+    "image_h": 370,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "bus",
+    "subject_box": [
+      215,
+      175,
+      304,
+      225
+    ],
+    "object_box": [
+      2,
+      45,
+      484,
+      321
+    ]
+  },
+  {
+    "image_id": 1767,
+    "image_file": "1767.jpg",
+    "image_w": 850,
+    "image_h": 650,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      248,
+      135,
+      276,
+      186
+    ],
+    "object_box": [
+      83,
+      2,
+      798,
+      418
+    ]
+  },
+  {
+    "image_id": 1767,
+    "image_file": "1767.jpg",
+    "image_w": 850,
+    "image_h": 650,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      320,
+      141,
+      356,
+      179
+    ],
+    "object_box": [
+      83,
+      2,
+      798,
+      418
+    ]
+  },
+  {
+    "image_id": 1767,
+    "image_file": "1767.jpg",
+    "image_w": 850,
+    "image_h": 650,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      392,
+      125,
+      428,
+      173
+    ],
+    "object_box": [
+      83,
+      2,
+      798,
+      418
+    ]
+  },
+  {
+    "image_id": 1767,
+    "image_file": "1767.jpg",
+    "image_w": 850,
+    "image_h": 650,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      475,
+      132,
+      510,
+      170
+    ],
+    "object_box": [
+      83,
+      2,
+      798,
+      418
+    ]
+  },
+  {
+    "image_id": 1767,
+    "image_file": "1767.jpg",
+    "image_w": 850,
+    "image_h": 650,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      555,
+      124,
+      591,
+      169
+    ],
+    "object_box": [
+      83,
+      2,
+      798,
+      418
+    ]
+  },
+  {
+    "image_id": 1767,
+    "image_file": "1767.jpg",
+    "image_w": 850,
+    "image_h": 650,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      646,
+      132,
+      672,
+      169
+    ],
+    "object_box": [
+      83,
+      2,
+      798,
+      418
+    ]
+  },
+  {
+    "image_id": 1767,
+    "image_file": "1767.jpg",
+    "image_w": 850,
+    "image_h": 650,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      729,
+      132,
+      757,
+      173
+    ],
+    "object_box": [
+      83,
+      2,
+      798,
+      418
+    ]
+  },
+  {
+    "image_id": 1767,
+    "image_file": "1767.jpg",
+    "image_w": 850,
+    "image_h": 650,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      237,
+      209,
+      283,
+      271
+    ],
+    "object_box": [
+      83,
+      2,
+      798,
+      418
+    ]
+  },
+  {
+    "image_id": 1767,
+    "image_file": "1767.jpg",
+    "image_w": 850,
+    "image_h": 650,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      318,
+      220,
+      350,
+      278
+    ],
+    "object_box": [
+      83,
+      2,
+      798,
+      418
+    ]
+  },
+  {
+    "image_id": 1767,
+    "image_file": "1767.jpg",
+    "image_w": 850,
+    "image_h": 650,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      639,
+      209,
+      669,
+      282
+    ],
+    "object_box": [
+      83,
+      2,
+      798,
+      418
+    ]
+  },
+  {
+    "image_id": 1767,
+    "image_file": "1767.jpg",
+    "image_w": 850,
+    "image_h": 650,
+    "subject_name": "person",
+    "predicate": "sitting on",
+    "object_name": "wall",
+    "subject_box": [
+      674,
+      379,
+      733,
+      425
+    ],
+    "object_box": [
+      440,
+      400,
+      756,
+      456
+    ]
+  },
+  {
+    "image_id": 1767,
+    "image_file": "1767.jpg",
+    "image_w": 850,
+    "image_h": 650,
+    "subject_name": "person",
+    "predicate": "sitting on",
+    "object_name": "wall",
+    "subject_box": [
+      613,
+      369,
+      650,
+      424
+    ],
+    "object_box": [
+      440,
+      400,
+      756,
+      456
+    ]
+  },
+  {
+    "image_id": 1767,
+    "image_file": "1767.jpg",
+    "image_w": 850,
+    "image_h": 650,
+    "subject_name": "person",
+    "predicate": "sitting on",
+    "object_name": "wall",
+    "subject_box": [
+      622,
+      373,
+      680,
+      428
+    ],
+    "object_box": [
+      440,
+      400,
+      756,
+      456
+    ]
+  },
+  {
+    "image_id": 1767,
+    "image_file": "1767.jpg",
+    "image_w": 850,
+    "image_h": 650,
+    "subject_name": "person",
+    "predicate": "sitting on",
+    "object_name": "wall",
+    "subject_box": [
+      554,
+      374,
+      594,
+      446
+    ],
+    "object_box": [
+      440,
+      400,
+      756,
+      456
+    ]
+  },
+  {
+    "image_id": 1767,
+    "image_file": "1767.jpg",
+    "image_w": 850,
+    "image_h": 650,
+    "subject_name": "person",
+    "predicate": "sitting on",
+    "object_name": "wall",
+    "subject_box": [
+      490,
+      363,
+      535,
+      440
+    ],
+    "object_box": [
+      440,
+      400,
+      756,
+      456
+    ]
+  },
+  {
+    "image_id": 2343494,
+    "image_file": "2343494.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      255,
+      150,
+      275,
+      190
+    ],
+    "object_box": [
+      2,
+      2,
+      442,
+      304
+    ]
+  },
+  {
+    "image_id": 2343494,
+    "image_file": "2343494.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      53,
+      7,
+      93,
+      68
+    ],
+    "object_box": [
+      2,
+      2,
+      442,
+      304
+    ]
+  },
+  {
+    "image_id": 2343494,
+    "image_file": "2343494.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      190,
+      74,
+      212,
+      113
+    ],
+    "object_box": [
+      2,
+      2,
+      442,
+      304
+    ]
+  },
+  {
+    "image_id": 2343494,
+    "image_file": "2343494.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      112,
+      31,
+      140,
+      89
+    ],
+    "object_box": [
+      2,
+      2,
+      442,
+      304
+    ]
+  },
+  {
+    "image_id": 2343494,
+    "image_file": "2343494.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      52,
+      90,
+      90,
+      152
+    ],
+    "object_box": [
+      2,
+      2,
+      442,
+      304
+    ]
+  },
+  {
+    "image_id": 2343494,
+    "image_file": "2343494.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      114,
+      104,
+      146,
+      166
+    ],
+    "object_box": [
+      2,
+      2,
+      442,
+      304
+    ]
+  },
+  {
+    "image_id": 2346474,
+    "image_file": "2346474.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "wall",
+    "predicate": "on",
+    "object_name": "wall",
+    "subject_box": [
+      1,
+      0,
+      500,
+      219
+    ],
+    "object_box": [
+      5,
+      53,
+      62,
+      116
+    ]
+  },
+  {
+    "image_id": 2394189,
+    "image_file": "2394189.jpg",
+    "image_w": 550,
+    "image_h": 360,
+    "subject_name": "bench",
+    "predicate": "in front of",
+    "object_name": "building",
+    "subject_box": [
+      26,
+      124,
+      58,
+      147
+    ],
+    "object_box": [
+      1,
+      1,
+      499,
+      232
+    ]
+  },
+  {
+    "image_id": 2394189,
+    "image_file": "2394189.jpg",
+    "image_w": 550,
+    "image_h": 360,
+    "subject_name": "building",
+    "predicate": "has",
+    "object_name": "window",
+    "subject_box": [
+      1,
+      1,
+      499,
+      232
+    ],
+    "object_box": [
+      34,
+      6,
+      48,
+      48
+    ]
+  },
+  {
+    "image_id": 2394189,
+    "image_file": "2394189.jpg",
+    "image_w": 550,
+    "image_h": 360,
+    "subject_name": "building",
+    "predicate": "has",
+    "object_name": "door",
+    "subject_box": [
+      1,
+      1,
+      499,
+      232
+    ],
+    "object_box": [
+      455,
+      13,
+      490,
+      186
+    ]
+  },
+  {
+    "image_id": 2358862,
+    "image_file": "2358862.jpg",
+    "image_w": 420,
+    "image_h": 550,
+    "subject_name": "bowl",
+    "predicate": "on",
+    "object_name": "table",
+    "subject_box": [
+      142,
+      270,
+      237,
+      352
+    ],
+    "object_box": [
+      21,
+      380,
+      161,
+      456
+    ]
+  },
+  {
+    "image_id": 2358862,
+    "image_file": "2358862.jpg",
+    "image_w": 420,
+    "image_h": 550,
+    "subject_name": "bowl",
+    "predicate": "on",
+    "object_name": "table",
+    "subject_box": [
+      262,
+      326,
+      369,
+      417
+    ],
+    "object_box": [
+      2,
+      317,
+      368,
+      498
+    ]
+  },
+  {
+    "image_id": 2358862,
+    "image_file": "2358862.jpg",
+    "image_w": 420,
+    "image_h": 550,
+    "subject_name": "bowl",
+    "predicate": "on",
+    "object_name": "table",
+    "subject_box": [
+      142,
+      270,
+      237,
+      352
+    ],
+    "object_box": [
+      94,
+      58,
+      367,
+      109
+    ]
+  },
+  {
+    "image_id": 2358862,
+    "image_file": "2358862.jpg",
+    "image_w": 420,
+    "image_h": 550,
+    "subject_name": "bowl",
+    "predicate": "on",
+    "object_name": "table",
+    "subject_box": [
+      262,
+      326,
+      369,
+      417
+    ],
+    "object_box": [
+      340,
+      84,
+      368,
+      112
+    ]
+  },
+  {
+    "image_id": 2345941,
+    "image_file": "2345941.jpg",
+    "image_w": 300,
+    "image_h": 550,
+    "subject_name": "bottle",
+    "predicate": "on",
+    "object_name": "table",
+    "subject_box": [
+      232,
+      260,
+      251,
+      355
+    ],
+    "object_box": [
+      0,
+      333,
+      251,
+      497
+    ]
+  },
+  {
+    "image_id": 2345941,
+    "image_file": "2345941.jpg",
+    "image_w": 300,
+    "image_h": 550,
+    "subject_name": "bottle",
+    "predicate": "on",
+    "object_name": "table",
+    "subject_box": [
+      232,
+      260,
+      251,
+      355
+    ],
+    "object_box": [
+      0,
+      333,
+      251,
+      497
+    ]
+  },
+  {
+    "image_id": 2368637,
+    "image_file": "2368637.jpg",
+    "image_w": 380,
+    "image_h": 550,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      1,
+      0,
+      257,
+      484
+    ],
+    "object_box": [
+      0,
+      0,
+      329,
+      497
+    ]
+  },
+  {
+    "image_id": 2360301,
+    "image_file": "2360301.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      390,
+      13,
+      409,
+      46
+    ],
+    "object_box": [
+      80,
+      3,
+      498,
+      233
+    ]
+  },
+  {
+    "image_id": 2360301,
+    "image_file": "2360301.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      354,
+      1,
+      374,
+      38
+    ],
+    "object_box": [
+      80,
+      3,
+      498,
+      233
+    ]
+  },
+  {
+    "image_id": 2360301,
+    "image_file": "2360301.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      301,
+      8,
+      323,
+      45
+    ],
+    "object_box": [
+      80,
+      3,
+      498,
+      233
+    ]
+  },
+  {
+    "image_id": 2360301,
+    "image_file": "2360301.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      452,
+      26,
+      463,
+      66
+    ],
+    "object_box": [
+      80,
+      3,
+      498,
+      233
+    ]
+  },
+  {
+    "image_id": 2360301,
+    "image_file": "2360301.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      227,
+      56,
+      244,
+      84
+    ],
+    "object_box": [
+      80,
+      3,
+      498,
+      233
+    ]
+  },
+  {
+    "image_id": 2360301,
+    "image_file": "2360301.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "sign",
+    "predicate": "on",
+    "object_name": "window",
+    "subject_box": [
+      424,
+      237,
+      487,
+      287
+    ],
+    "object_box": [
+      254,
+      209,
+      353,
+      259
+    ]
+  },
+  {
+    "image_id": 2395179,
+    "image_file": "2395179.jpg",
+    "image_w": 380,
+    "image_h": 550,
+    "subject_name": "table",
+    "predicate": "has",
+    "object_name": "chair",
+    "subject_box": [
+      23,
+      256,
+      60,
+      281
+    ],
+    "object_box": [
+      48,
+      248,
+      78,
+      283
+    ]
+  },
+  {
+    "image_id": 2384042,
+    "image_file": "2384042.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "tree",
+    "predicate": "has",
+    "object_name": "tree",
+    "subject_box": [
+      0,
+      1,
+      66,
+      333
+    ],
+    "object_box": [
+      0,
+      1,
+      66,
+      333
+    ]
+  },
+  {
+    "image_id": 4521,
+    "image_file": "4521.jpg",
+    "image_w": 730,
+    "image_h": 550,
+    "subject_name": "wall",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      284,
+      142,
+      357,
+      235
+    ],
+    "object_box": [
+      30,
+      30,
+      712,
+      460
+    ]
+  },
+  {
+    "image_id": 3733,
+    "image_file": "3733.jpg",
+    "image_w": 620,
+    "image_h": 480,
+    "subject_name": "car",
+    "predicate": "on",
+    "object_name": "car",
+    "subject_box": [
+      31,
+      287,
+      145,
+      381
+    ],
+    "object_box": [
+      27,
+      261,
+      164,
+      392
+    ]
+  },
+  {
+    "image_id": 3733,
+    "image_file": "3733.jpg",
+    "image_w": 620,
+    "image_h": 480,
+    "subject_name": "car",
+    "predicate": "on",
+    "object_name": "car",
+    "subject_box": [
+      358,
+      286,
+      441,
+      347
+    ],
+    "object_box": [
+      357,
+      247,
+      436,
+      346
+    ]
+  },
+  {
+    "image_id": 2410606,
+    "image_file": "2410606.jpg",
+    "image_w": 550,
+    "image_h": 450,
+    "subject_name": "person",
+    "predicate": "wearing",
+    "object_name": "shirt",
+    "subject_box": [
+      171,
+      0,
+      229,
+      38
+    ],
+    "object_box": [
+      171,
+      0,
+      200,
+      24
+    ]
+  },
+  {
+    "image_id": 2386407,
+    "image_file": "2386407.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "bus",
+    "subject_box": [
+      212,
+      164,
+      247,
+      205
+    ],
+    "object_box": [
+      15,
+      73,
+      249,
+      280
+    ]
+  },
+  {
+    "image_id": 2386407,
+    "image_file": "2386407.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "bus",
+    "subject_box": [
+      168,
+      158,
+      215,
+      202
+    ],
+    "object_box": [
+      15,
+      73,
+      249,
+      280
+    ]
+  },
+  {
+    "image_id": 2386407,
+    "image_file": "2386407.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "bus",
+    "subject_box": [
+      216,
+      98,
+      241,
+      138
+    ],
+    "object_box": [
+      15,
+      73,
+      249,
+      280
+    ]
+  },
+  {
+    "image_id": 2386407,
+    "image_file": "2386407.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "bus",
+    "subject_box": [
+      189,
+      86,
+      215,
+      125
+    ],
+    "object_box": [
+      15,
+      73,
+      249,
+      280
+    ]
+  },
+  {
+    "image_id": 2386407,
+    "image_file": "2386407.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "bus",
+    "subject_box": [
+      212,
+      164,
+      247,
+      205
+    ],
+    "object_box": [
+      15,
+      73,
+      249,
+      280
+    ]
+  },
+  {
+    "image_id": 2386407,
+    "image_file": "2386407.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "bus",
+    "subject_box": [
+      168,
+      158,
+      215,
+      202
+    ],
+    "object_box": [
+      15,
+      73,
+      249,
+      280
+    ]
+  },
+  {
+    "image_id": 2386407,
+    "image_file": "2386407.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "bus",
+    "subject_box": [
+      168,
+      158,
+      215,
+      202
+    ],
+    "object_box": [
+      15,
+      73,
+      249,
+      280
+    ]
+  },
+  {
+    "image_id": 2386407,
+    "image_file": "2386407.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "bus",
+    "subject_box": [
+      212,
+      164,
+      247,
+      205
+    ],
+    "object_box": [
+      15,
+      73,
+      249,
+      280
+    ]
+  },
+  {
+    "image_id": 2386407,
+    "image_file": "2386407.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "bus",
+    "subject_box": [
+      216,
+      98,
+      241,
+      138
+    ],
+    "object_box": [
+      15,
+      73,
+      249,
+      280
+    ]
+  },
+  {
+    "image_id": 2386407,
+    "image_file": "2386407.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "bus",
+    "subject_box": [
+      189,
+      86,
+      215,
+      125
+    ],
+    "object_box": [
+      15,
+      73,
+      249,
+      280
+    ]
+  },
+  {
+    "image_id": 2386407,
+    "image_file": "2386407.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "building",
+    "predicate": "behind",
+    "object_name": "bus",
+    "subject_box": [
+      145,
+      3,
+      498,
+      252
+    ],
+    "object_box": [
+      261,
+      158,
+      498,
+      257
+    ]
+  },
+  {
+    "image_id": 2386407,
+    "image_file": "2386407.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "building",
+    "predicate": "behind",
+    "object_name": "bus",
+    "subject_box": [
+      145,
+      3,
+      498,
+      252
+    ],
+    "object_box": [
+      15,
+      73,
+      249,
+      280
+    ]
+  },
+  {
+    "image_id": 2412557,
+    "image_file": "2412557.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "tree",
+    "predicate": "behind",
+    "object_name": "bench",
+    "subject_box": [
+      234,
+      9,
+      304,
+      111
+    ],
+    "object_box": [
+      1,
+      181,
+      498,
+      216
+    ]
+  },
+  {
+    "image_id": 2412557,
+    "image_file": "2412557.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "tree",
+    "predicate": "behind",
+    "object_name": "bench",
+    "subject_box": [
+      234,
+      9,
+      304,
+      111
+    ],
+    "object_box": [
+      1,
+      181,
+      498,
+      216
+    ]
+  },
+  {
+    "image_id": 2354061,
+    "image_file": "2354061.jpg",
+    "image_w": 420,
+    "image_h": 550,
+    "subject_name": "bowl",
+    "predicate": "on",
+    "object_name": "table",
+    "subject_box": [
+      0,
+      84,
+      210,
+      345
+    ],
+    "object_box": [
+      4,
+      1,
+      369,
+      493
+    ]
+  },
+  {
+    "image_id": 2354061,
+    "image_file": "2354061.jpg",
+    "image_w": 420,
+    "image_h": 550,
+    "subject_name": "bowl",
+    "predicate": "sitting on",
+    "object_name": "table",
+    "subject_box": [
+      89,
+      289,
+      303,
+      499
+    ],
+    "object_box": [
+      4,
+      1,
+      369,
+      493
+    ]
+  },
+  {
+    "image_id": 2354061,
+    "image_file": "2354061.jpg",
+    "image_w": 420,
+    "image_h": 550,
+    "subject_name": "bowl",
+    "predicate": "sitting on",
+    "object_name": "table",
+    "subject_box": [
+      0,
+      84,
+      210,
+      345
+    ],
+    "object_box": [
+      4,
+      1,
+      369,
+      493
+    ]
+  },
+  {
+    "image_id": 2392028,
+    "image_file": "2392028.jpg",
+    "image_w": 550,
+    "image_h": 230,
+    "subject_name": "sign",
+    "predicate": "on",
+    "object_name": "wall",
+    "subject_box": [
+      80,
+      22,
+      236,
+      169
+    ],
+    "object_box": [
+      1,
+      2,
+      498,
+      183
+    ]
+  },
+  {
+    "image_id": 2392028,
+    "image_file": "2392028.jpg",
+    "image_w": 550,
+    "image_h": 230,
+    "subject_name": "sign",
+    "predicate": "on",
+    "object_name": "wall",
+    "subject_box": [
+      80,
+      22,
+      236,
+      169
+    ],
+    "object_box": [
+      1,
+      2,
+      498,
+      183
+    ]
+  },
+  {
+    "image_id": 2392028,
+    "image_file": "2392028.jpg",
+    "image_w": 550,
+    "image_h": 230,
+    "subject_name": "wall",
+    "predicate": "behind",
+    "object_name": "sign",
+    "subject_box": [
+      1,
+      2,
+      498,
+      183
+    ],
+    "object_box": [
+      80,
+      22,
+      236,
+      169
+    ]
+  },
+  {
+    "image_id": 2392028,
+    "image_file": "2392028.jpg",
+    "image_w": 550,
+    "image_h": 230,
+    "subject_name": "sign",
+    "predicate": "attached to",
+    "object_name": "wall",
+    "subject_box": [
+      80,
+      22,
+      236,
+      169
+    ],
+    "object_box": [
+      1,
+      2,
+      498,
+      183
+    ]
+  },
+  {
+    "image_id": 2392028,
+    "image_file": "2392028.jpg",
+    "image_w": 550,
+    "image_h": 230,
+    "subject_name": "wall",
+    "predicate": "behind",
+    "object_name": "sign",
+    "subject_box": [
+      1,
+      2,
+      498,
+      183
+    ],
+    "object_box": [
+      80,
+      22,
+      236,
+      169
+    ]
+  },
+  {
+    "image_id": 2404682,
+    "image_file": "2404682.jpg",
+    "image_w": 420,
+    "image_h": 550,
+    "subject_name": "sign",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      72,
+      38,
+      123,
+      215
+    ],
+    "object_box": [
+      4,
+      0,
+      89,
+      356
+    ]
+  },
+  {
+    "image_id": 2372776,
+    "image_file": "2372776.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "person",
+    "predicate": "wearing",
+    "object_name": "pants",
+    "subject_box": [
+      164,
+      14,
+      324,
+      328
+    ],
+    "object_box": [
+      178,
+      141,
+      279,
+      267
+    ]
+  },
+  {
+    "image_id": 1920,
+    "image_file": "1920.jpg",
+    "image_w": 850,
+    "image_h": 650,
+    "subject_name": "person",
+    "predicate": "wearing",
+    "object_name": "shirt",
+    "subject_box": [
+      120,
+      168,
+      568,
+      597
+    ],
+    "object_box": [
+      149,
+      365,
+      543,
+      597
+    ]
+  },
+  {
+    "image_id": 2318214,
+    "image_file": "2318214.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "tree",
+    "predicate": "behind",
+    "object_name": "boat",
+    "subject_box": [
+      0,
+      45,
+      499,
+      187
+    ],
+    "object_box": [
+      110,
+      194,
+      457,
+      250
+    ]
+  },
+  {
+    "image_id": 2336404,
+    "image_file": "2336404.jpg",
+    "image_w": 380,
+    "image_h": 460,
+    "subject_name": "person",
+    "predicate": "near",
+    "object_name": "building",
+    "subject_box": [
+      274,
+      178,
+      292,
+      203
+    ],
+    "object_box": [
+      247,
+      163,
+      331,
+      198
+    ]
+  },
+  {
+    "image_id": 2336404,
+    "image_file": "2336404.jpg",
+    "image_w": 380,
+    "image_h": 460,
+    "subject_name": "person",
+    "predicate": "wearing",
+    "object_name": "shirt",
+    "subject_box": [
+      274,
+      178,
+      292,
+      203
+    ],
+    "object_box": [
+      273,
+      185,
+      288,
+      200
+    ]
+  },
+  {
+    "image_id": 2413302,
+    "image_file": "2413302.jpg",
+    "image_w": 410,
+    "image_h": 550,
+    "subject_name": "window",
+    "predicate": "attached to",
+    "object_name": "building",
+    "subject_box": [
+      158,
+      287,
+      194,
+      371
+    ],
+    "object_box": [
+      1,
+      1,
+      356,
+      500
+    ]
+  },
+  {
+    "image_id": 2413302,
+    "image_file": "2413302.jpg",
+    "image_w": 410,
+    "image_h": 550,
+    "subject_name": "window",
+    "predicate": "attached to",
+    "object_name": "building",
+    "subject_box": [
+      151,
+      191,
+      183,
+      262
+    ],
+    "object_box": [
+      1,
+      1,
+      356,
+      500
+    ]
+  },
+  {
+    "image_id": 2413302,
+    "image_file": "2413302.jpg",
+    "image_w": 410,
+    "image_h": 550,
+    "subject_name": "window",
+    "predicate": "attached to",
+    "object_name": "building",
+    "subject_box": [
+      212,
+      219,
+      245,
+      283
+    ],
+    "object_box": [
+      1,
+      1,
+      356,
+      500
+    ]
+  },
+  {
+    "image_id": 2413302,
+    "image_file": "2413302.jpg",
+    "image_w": 410,
+    "image_h": 550,
+    "subject_name": "window",
+    "predicate": "attached to",
+    "object_name": "building",
+    "subject_box": [
+      276,
+      317,
+      311,
+      395
+    ],
+    "object_box": [
+      1,
+      1,
+      356,
+      500
+    ]
+  },
+  {
+    "image_id": 2413302,
+    "image_file": "2413302.jpg",
+    "image_w": 410,
+    "image_h": 550,
+    "subject_name": "window",
+    "predicate": "attached to",
+    "object_name": "building",
+    "subject_box": [
+      263,
+      228,
+      300,
+      299
+    ],
+    "object_box": [
+      1,
+      1,
+      356,
+      500
+    ]
+  },
+  {
+    "image_id": 1926,
+    "image_file": "1926.jpg",
+    "image_w": 850,
+    "image_h": 650,
+    "subject_name": "shirt",
+    "predicate": "on",
+    "object_name": "person",
+    "subject_box": [
+      90,
+      129,
+      142,
+      170
+    ],
+    "object_box": [
+      93,
+      108,
+      145,
+      208
+    ]
+  },
+  {
+    "image_id": 1926,
+    "image_file": "1926.jpg",
+    "image_w": 850,
+    "image_h": 650,
+    "subject_name": "person",
+    "predicate": "wearing",
+    "object_name": "shirt",
+    "subject_box": [
+      93,
+      108,
+      145,
+      208
+    ],
+    "object_box": [
+      90,
+      129,
+      142,
+      170
+    ]
+  },
+  {
+    "image_id": 1926,
+    "image_file": "1926.jpg",
+    "image_w": 850,
+    "image_h": 650,
+    "subject_name": "person",
+    "predicate": "wearing",
+    "object_name": "shirt",
+    "subject_box": [
+      93,
+      108,
+      145,
+      208
+    ],
+    "object_box": [
+      90,
+      129,
+      142,
+      170
+    ]
+  },
+  {
+    "image_id": 1926,
+    "image_file": "1926.jpg",
+    "image_w": 850,
+    "image_h": 650,
+    "subject_name": "person",
+    "predicate": "wearing",
+    "object_name": "pants",
+    "subject_box": [
+      93,
+      108,
+      145,
+      208
+    ],
+    "object_box": [
+      100,
+      152,
+      136,
+      198
+    ]
+  },
+  {
+    "image_id": 1926,
+    "image_file": "1926.jpg",
+    "image_w": 850,
+    "image_h": 650,
+    "subject_name": "person",
+    "predicate": "wearing",
+    "object_name": "shirt",
+    "subject_box": [
+      93,
+      108,
+      145,
+      208
+    ],
+    "object_box": [
+      90,
+      129,
+      142,
+      170
+    ]
+  },
+  {
+    "image_id": 2372098,
+    "image_file": "2372098.jpg",
+    "image_w": 550,
+    "image_h": 330,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "window",
+    "subject_box": [
+      130,
+      114,
+      147,
+      156
+    ],
+    "object_box": [
+      147,
+      111,
+      182,
+      165
+    ]
+  },
+  {
+    "image_id": 2341390,
+    "image_file": "2341390.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "car",
+    "subject_box": [
+      207,
+      90,
+      485,
+      317
+    ],
+    "object_box": [
+      1,
+      0,
+      498,
+      375
+    ]
+  },
+  {
+    "image_id": 2341390,
+    "image_file": "2341390.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "tree",
+    "predicate": "next to",
+    "object_name": "car",
+    "subject_box": [
+      282,
+      1,
+      497,
+      41
+    ],
+    "object_box": [
+      1,
+      0,
+      498,
+      375
+    ]
+  },
+  {
+    "image_id": 2360537,
+    "image_file": "2360537.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "sign",
+    "predicate": "on",
+    "object_name": "table",
+    "subject_box": [
+      129,
+      305,
+      214,
+      328
+    ],
+    "object_box": [
+      340,
+      303,
+      420,
+      320
+    ]
+  },
+  {
+    "image_id": 2357681,
+    "image_file": "2357681.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "bus",
+    "predicate": "has",
+    "object_name": "window",
+    "subject_box": [
+      43,
+      49,
+      408,
+      305
+    ],
+    "object_box": [
+      292,
+      54,
+      408,
+      251
+    ]
+  },
+  {
+    "image_id": 2357681,
+    "image_file": "2357681.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "sign",
+    "predicate": "on",
+    "object_name": "bus",
+    "subject_box": [
+      313,
+      133,
+      384,
+      161
+    ],
+    "object_box": [
+      43,
+      49,
+      408,
+      305
+    ]
+  },
+  {
+    "image_id": 2391398,
+    "image_file": "2391398.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "tree",
+    "predicate": "near",
+    "object_name": "bench",
+    "subject_box": [
+      117,
+      0,
+      155,
+      220
+    ],
+    "object_box": [
+      23,
+      31,
+      397,
+      366
+    ]
+  },
+  {
+    "image_id": 2387636,
+    "image_file": "2387636.jpg",
+    "image_w": 380,
+    "image_h": 550,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "door",
+    "subject_box": [
+      183,
+      202,
+      252,
+      313
+    ],
+    "object_box": [
+      172,
+      174,
+      257,
+      370
+    ]
+  },
+  {
+    "image_id": 2387636,
+    "image_file": "2387636.jpg",
+    "image_w": 380,
+    "image_h": 550,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "door",
+    "subject_box": [
+      183,
+      202,
+      252,
+      313
+    ],
+    "object_box": [
+      172,
+      174,
+      257,
+      370
+    ]
+  },
+  {
+    "image_id": 2387636,
+    "image_file": "2387636.jpg",
+    "image_w": 380,
+    "image_h": 550,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "door",
+    "subject_box": [
+      183,
+      202,
+      252,
+      313
+    ],
+    "object_box": [
+      172,
+      174,
+      257,
+      370
+    ]
+  },
+  {
+    "image_id": 2345263,
+    "image_file": "2345263.jpg",
+    "image_w": 420,
+    "image_h": 550,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "wall",
+    "subject_box": [
+      1,
+      47,
+      138,
+      412
+    ],
+    "object_box": [
+      2,
+      19,
+      323,
+      409
+    ]
+  },
+  {
+    "image_id": 713926,
+    "image_file": "713926.jpg",
+    "image_w": 1070,
+    "image_h": 570,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      740,
+      307,
+      753,
+      321
+    ],
+    "object_box": [
+      624,
+      227,
+      916,
+      396
+    ]
+  },
+  {
+    "image_id": 713926,
+    "image_file": "713926.jpg",
+    "image_w": 1070,
+    "image_h": 570,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      810,
+      302,
+      827,
+      319
+    ],
+    "object_box": [
+      633,
+      217,
+      915,
+      404
+    ]
+  },
+  {
+    "image_id": 713926,
+    "image_file": "713926.jpg",
+    "image_w": 1070,
+    "image_h": 570,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      829,
+      300,
+      846,
+      319
+    ],
+    "object_box": [
+      633,
+      217,
+      915,
+      404
+    ]
+  },
+  {
+    "image_id": 713926,
+    "image_file": "713926.jpg",
+    "image_w": 1070,
+    "image_h": 570,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      763,
+      329,
+      779,
+      350
+    ],
+    "object_box": [
+      629,
+      224,
+      906,
+      389
+    ]
+  },
+  {
+    "image_id": 2341999,
+    "image_file": "2341999.jpg",
+    "image_w": 540,
+    "image_h": 540,
+    "subject_name": "bottle",
+    "predicate": "on",
+    "object_name": "table",
+    "subject_box": [
+      53,
+      43,
+      298,
+      475
+    ],
+    "object_box": [
+      15,
+      221,
+      485,
+      495
+    ]
+  },
+  {
+    "image_id": 2341999,
+    "image_file": "2341999.jpg",
+    "image_w": 540,
+    "image_h": 540,
+    "subject_name": "bottle",
+    "predicate": "on",
+    "object_name": "table",
+    "subject_box": [
+      53,
+      43,
+      298,
+      475
+    ],
+    "object_box": [
+      22,
+      409,
+      97,
+      479
+    ]
+  },
+  {
+    "image_id": 2341999,
+    "image_file": "2341999.jpg",
+    "image_w": 540,
+    "image_h": 540,
+    "subject_name": "bottle",
+    "predicate": "on",
+    "object_name": "table",
+    "subject_box": [
+      53,
+      43,
+      298,
+      475
+    ],
+    "object_box": [
+      20,
+      297,
+      415,
+      488
+    ]
+  },
+  {
+    "image_id": 2341999,
+    "image_file": "2341999.jpg",
+    "image_w": 540,
+    "image_h": 540,
+    "subject_name": "bottle",
+    "predicate": "on",
+    "object_name": "table",
+    "subject_box": [
+      208,
+      14,
+      405,
+      370
+    ],
+    "object_box": [
+      23,
+      288,
+      134,
+      415
+    ]
+  },
+  {
+    "image_id": 2409961,
+    "image_file": "2409961.jpg",
+    "image_w": 420,
+    "image_h": 550,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      160,
+      289,
+      196,
+      394
+    ],
+    "object_box": [
+      0,
+      64,
+      295,
+      498
+    ]
+  },
+  {
+    "image_id": 2409961,
+    "image_file": "2409961.jpg",
+    "image_w": 420,
+    "image_h": 550,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      160,
+      289,
+      196,
+      394
+    ],
+    "object_box": [
+      0,
+      64,
+      295,
+      498
+    ]
+  },
+  {
+    "image_id": 2409961,
+    "image_file": "2409961.jpg",
+    "image_w": 420,
+    "image_h": 550,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      194,
+      293,
+      225,
+      390
+    ],
+    "object_box": [
+      0,
+      64,
+      295,
+      498
+    ]
+  },
+  {
+    "image_id": 2409961,
+    "image_file": "2409961.jpg",
+    "image_w": 420,
+    "image_h": 550,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      160,
+      289,
+      196,
+      394
+    ],
+    "object_box": [
+      0,
+      64,
+      295,
+      498
+    ]
+  },
+  {
+    "image_id": 2409961,
+    "image_file": "2409961.jpg",
+    "image_w": 420,
+    "image_h": 550,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      194,
+      293,
+      225,
+      390
+    ],
+    "object_box": [
+      0,
+      64,
+      295,
+      498
+    ]
+  },
+  {
+    "image_id": 2403487,
+    "image_file": "2403487.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "tree",
+    "predicate": "in front of",
+    "object_name": "building",
+    "subject_box": [
+      2,
+      134,
+      97,
+      240
+    ],
+    "object_box": [
+      7,
+      217,
+      214,
+      308
+    ]
+  },
+  {
+    "image_id": 2403487,
+    "image_file": "2403487.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "person",
+    "predicate": "wearing",
+    "object_name": "shirt",
+    "subject_box": [
+      34,
+      248,
+      73,
+      318
+    ],
+    "object_box": [
+      50,
+      259,
+      68,
+      279
+    ]
+  },
+  {
+    "image_id": 2387038,
+    "image_file": "2387038.jpg",
+    "image_w": 420,
+    "image_h": 550,
+    "subject_name": "sign",
+    "predicate": "in front of",
+    "object_name": "tree",
+    "subject_box": [
+      62,
+      197,
+      316,
+      494
+    ],
+    "object_box": [
+      4,
+      1,
+      373,
+      499
+    ]
+  },
+  {
+    "image_id": 2375847,
+    "image_file": "2375847.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "bowl",
+    "predicate": "behind",
+    "object_name": "bag",
+    "subject_box": [
+      297,
+      100,
+      435,
+      143
+    ],
+    "object_box": [
+      302,
+      58,
+      404,
+      231
+    ]
+  },
+  {
+    "image_id": 2375847,
+    "image_file": "2375847.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "bag",
+    "predicate": "on",
+    "object_name": "table",
+    "subject_box": [
+      212,
+      1,
+      303,
+      119
+    ],
+    "object_box": [
+      0,
+      94,
+      498,
+      373
+    ]
+  },
+  {
+    "image_id": 2375847,
+    "image_file": "2375847.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "bag",
+    "predicate": "on",
+    "object_name": "table",
+    "subject_box": [
+      211,
+      64,
+      297,
+      231
+    ],
+    "object_box": [
+      0,
+      94,
+      498,
+      373
+    ]
+  },
+  {
+    "image_id": 2375847,
+    "image_file": "2375847.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "chair",
+    "predicate": "next to",
+    "object_name": "table",
+    "subject_box": [
+      1,
+      66,
+      104,
+      167
+    ],
+    "object_box": [
+      0,
+      94,
+      498,
+      373
+    ]
+  },
+  {
+    "image_id": 2332205,
+    "image_file": "2332205.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "bowl",
+    "predicate": "on",
+    "object_name": "table",
+    "subject_box": [
+      345,
+      220,
+      396,
+      241
+    ],
+    "object_box": [
+      314,
+      227,
+      423,
+      310
+    ]
+  },
+  {
+    "image_id": 2405440,
+    "image_file": "2405440.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "bottle",
+    "predicate": "on",
+    "object_name": "table",
+    "subject_box": [
+      12,
+      142,
+      28,
+      177
+    ],
+    "object_box": [
+      1,
+      161,
+      69,
+      335
+    ]
+  },
+  {
+    "image_id": 2405440,
+    "image_file": "2405440.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "bottle",
+    "predicate": "on",
+    "object_name": "table",
+    "subject_box": [
+      12,
+      142,
+      28,
+      177
+    ],
+    "object_box": [
+      1,
+      161,
+      69,
+      335
+    ]
+  },
+  {
+    "image_id": 2374822,
+    "image_file": "2374822.jpg",
+    "image_w": 540,
+    "image_h": 540,
+    "subject_name": "door",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      55,
+      292,
+      116,
+      382
+    ],
+    "object_box": [
+      14,
+      70,
+      480,
+      395
+    ]
+  },
+  {
+    "image_id": 2374822,
+    "image_file": "2374822.jpg",
+    "image_w": 540,
+    "image_h": 540,
+    "subject_name": "door",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      55,
+      292,
+      116,
+      382
+    ],
+    "object_box": [
+      14,
+      70,
+      480,
+      395
+    ]
+  },
+  {
+    "image_id": 2374822,
+    "image_file": "2374822.jpg",
+    "image_w": 540,
+    "image_h": 540,
+    "subject_name": "sign",
+    "predicate": "on",
+    "object_name": "wall",
+    "subject_box": [
+      110,
+      282,
+      182,
+      362
+    ],
+    "object_box": [
+      14,
+      278,
+      199,
+      393
+    ]
+  },
+  {
+    "image_id": 2374822,
+    "image_file": "2374822.jpg",
+    "image_w": 540,
+    "image_h": 540,
+    "subject_name": "sign",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      110,
+      282,
+      182,
+      362
+    ],
+    "object_box": [
+      14,
+      70,
+      480,
+      395
+    ]
+  },
+  {
+    "image_id": 2323913,
+    "image_file": "2323913.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      293,
+      34,
+      323,
+      78
+    ],
+    "object_box": [
+      280,
+      19,
+      352,
+      122
+    ]
+  },
+  {
+    "image_id": 2410667,
+    "image_file": "2410667.jpg",
+    "image_w": 450,
+    "image_h": 550,
+    "subject_name": "building",
+    "predicate": "has",
+    "object_name": "window",
+    "subject_box": [
+      138,
+      81,
+      205,
+      166
+    ],
+    "object_box": [
+      166,
+      115,
+      191,
+      140
+    ]
+  },
+  {
+    "image_id": 2333215,
+    "image_file": "2333215.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      397,
+      309,
+      408,
+      324
+    ],
+    "object_box": [
+      0,
+      52,
+      498,
+      330
+    ]
+  },
+  {
+    "image_id": 2333215,
+    "image_file": "2333215.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      269,
+      238,
+      301,
+      265
+    ],
+    "object_box": [
+      0,
+      52,
+      498,
+      330
+    ]
+  },
+  {
+    "image_id": 2333215,
+    "image_file": "2333215.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      397,
+      309,
+      408,
+      324
+    ],
+    "object_box": [
+      0,
+      52,
+      498,
+      330
+    ]
+  },
+  {
+    "image_id": 2333215,
+    "image_file": "2333215.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      378,
+      234,
+      402,
+      252
+    ],
+    "object_box": [
+      0,
+      52,
+      498,
+      330
+    ]
+  },
+  {
+    "image_id": 2333215,
+    "image_file": "2333215.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      397,
+      309,
+      408,
+      324
+    ],
+    "object_box": [
+      0,
+      52,
+      498,
+      330
+    ]
+  },
+  {
+    "image_id": 2333215,
+    "image_file": "2333215.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      397,
+      309,
+      408,
+      324
+    ],
+    "object_box": [
+      80,
+      206,
+      265,
+      298
+    ]
+  },
+  {
+    "image_id": 2333215,
+    "image_file": "2333215.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      397,
+      309,
+      408,
+      324
+    ],
+    "object_box": [
+      220,
+      202,
+      498,
+      329
+    ]
+  },
+  {
+    "image_id": 2333215,
+    "image_file": "2333215.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      397,
+      309,
+      408,
+      324
+    ],
+    "object_box": [
+      280,
+      155,
+      498,
+      329
+    ]
+  },
+  {
+    "image_id": 2333215,
+    "image_file": "2333215.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      397,
+      309,
+      408,
+      324
+    ],
+    "object_box": [
+      0,
+      52,
+      498,
+      330
+    ]
+  },
+  {
+    "image_id": 2333215,
+    "image_file": "2333215.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      397,
+      309,
+      408,
+      324
+    ],
+    "object_box": [
+      305,
+      170,
+      497,
+      330
+    ]
+  },
+  {
+    "image_id": 2333215,
+    "image_file": "2333215.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      286,
+      243,
+      299,
+      261
+    ],
+    "object_box": [
+      217,
+      202,
+      328,
+      293
+    ]
+  },
+  {
+    "image_id": 2333215,
+    "image_file": "2333215.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "building",
+    "predicate": "has",
+    "object_name": "window",
+    "subject_box": [
+      0,
+      52,
+      498,
+      330
+    ],
+    "object_box": [
+      229,
+      239,
+      252,
+      268
+    ]
+  },
+  {
+    "image_id": 2333215,
+    "image_file": "2333215.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      397,
+      309,
+      408,
+      324
+    ],
+    "object_box": [
+      305,
+      170,
+      497,
+      330
+    ]
+  },
+  {
+    "image_id": 2333215,
+    "image_file": "2333215.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      397,
+      309,
+      408,
+      324
+    ],
+    "object_box": [
+      0,
+      52,
+      498,
+      330
+    ]
+  },
+  {
+    "image_id": 3208,
+    "image_file": "3208.jpg",
+    "image_w": 850,
+    "image_h": 640,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      392,
+      197,
+      408,
+      214
+    ],
+    "object_box": [
+      295,
+      165,
+      462,
+      236
+    ]
+  },
+  {
+    "image_id": 3208,
+    "image_file": "3208.jpg",
+    "image_w": 850,
+    "image_h": 640,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      425,
+      198,
+      442,
+      215
+    ],
+    "object_box": [
+      301,
+      167,
+      459,
+      233
+    ]
+  },
+  {
+    "image_id": 3208,
+    "image_file": "3208.jpg",
+    "image_w": 850,
+    "image_h": 640,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      425,
+      198,
+      442,
+      215
+    ],
+    "object_box": [
+      295,
+      165,
+      462,
+      236
+    ]
+  },
+  {
+    "image_id": 3208,
+    "image_file": "3208.jpg",
+    "image_w": 850,
+    "image_h": 640,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      392,
+      197,
+      408,
+      214
+    ],
+    "object_box": [
+      295,
+      170,
+      463,
+      242
+    ]
+  },
+  {
+    "image_id": 2343179,
+    "image_file": "2343179.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "person",
+    "predicate": "wearing",
+    "object_name": "hat",
+    "subject_box": [
+      196,
+      228,
+      210,
+      268
+    ],
+    "object_box": [
+      199,
+      228,
+      206,
+      236
+    ]
+  },
+  {
+    "image_id": 2343179,
+    "image_file": "2343179.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "person",
+    "predicate": "wearing",
+    "object_name": "hat",
+    "subject_box": [
+      196,
+      228,
+      210,
+      268
+    ],
+    "object_box": [
+      199,
+      228,
+      206,
+      236
+    ]
+  },
+  {
+    "image_id": 2402012,
+    "image_file": "2402012.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "person",
+    "predicate": "wearing",
+    "object_name": "pants",
+    "subject_box": [
+      351,
+      1,
+      500,
+      330
+    ],
+    "object_box": [
+      375,
+      184,
+      499,
+      329
+    ]
+  },
+  {
+    "image_id": 2402012,
+    "image_file": "2402012.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "person",
+    "predicate": "wearing",
+    "object_name": "shirt",
+    "subject_box": [
+      1,
+      2,
+      207,
+      329
+    ],
+    "object_box": [
+      1,
+      15,
+      146,
+      331
+    ]
+  },
+  {
+    "image_id": 3598,
+    "image_file": "3598.jpg",
+    "image_w": 800,
+    "image_h": 560,
+    "subject_name": "bowl",
+    "predicate": "on",
+    "object_name": "table",
+    "subject_box": [
+      329,
+      333,
+      507,
+      494
+    ],
+    "object_box": [
+      1,
+      334,
+      568,
+      498
+    ]
+  },
+  {
+    "image_id": 2383138,
+    "image_file": "2383138.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "person",
+    "predicate": "wearing",
+    "object_name": "shirt",
+    "subject_box": [
+      438,
+      0,
+      493,
+      104
+    ],
+    "object_box": [
+      445,
+      1,
+      486,
+      22
+    ]
+  },
+  {
+    "image_id": 2408616,
+    "image_file": "2408616.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "car",
+    "predicate": "has",
+    "object_name": "window",
+    "subject_box": [
+      42,
+      71,
+      325,
+      300
+    ],
+    "object_box": [
+      227,
+      117,
+      296,
+      240
+    ]
+  },
+  {
+    "image_id": 2408616,
+    "image_file": "2408616.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "person",
+    "predicate": "wearing",
+    "object_name": "hat",
+    "subject_box": [
+      54,
+      108,
+      205,
+      293
+    ],
+    "object_box": [
+      51,
+      105,
+      173,
+      188
+    ]
+  },
+  {
+    "image_id": 2358724,
+    "image_file": "2358724.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "person",
+    "predicate": "wearing",
+    "object_name": "pants",
+    "subject_box": [
+      7,
+      183,
+      24,
+      223
+    ],
+    "object_box": [
+      9,
+      202,
+      21,
+      219
+    ]
+  },
+  {
+    "image_id": 2317127,
+    "image_file": "2317127.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "chair",
+    "predicate": "near",
+    "object_name": "window",
+    "subject_box": [
+      187,
+      179,
+      279,
+      303
+    ],
+    "object_box": [
+      222,
+      85,
+      297,
+      194
+    ]
+  },
+  {
+    "image_id": 2358973,
+    "image_file": "2358973.jpg",
+    "image_w": 380,
+    "image_h": 550,
+    "subject_name": "bag",
+    "predicate": "on",
+    "object_name": "table",
+    "subject_box": [
+      12,
+      283,
+      81,
+      318
+    ],
+    "object_box": [
+      0,
+      302,
+      224,
+      443
+    ]
+  },
+  {
+    "image_id": 2327427,
+    "image_file": "2327427.jpg",
+    "image_w": 540,
+    "image_h": 420,
+    "subject_name": "chair",
+    "predicate": "under",
+    "object_name": "table",
+    "subject_box": [
+      291,
+      157,
+      376,
+      334
+    ],
+    "object_box": [
+      78,
+      103,
+      380,
+      287
+    ]
+  },
+  {
+    "image_id": 2342116,
+    "image_file": "2342116.jpg",
+    "image_w": 550,
+    "image_h": 370,
+    "subject_name": "building",
+    "predicate": "in front of",
+    "object_name": "tree",
+    "subject_box": [
+      1,
+      143,
+      82,
+      174
+    ],
+    "object_box": [
+      129,
+      143,
+      159,
+      169
+    ]
+  },
+  {
+    "image_id": 2318755,
+    "image_file": "2318755.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "person",
+    "predicate": "sitting on",
+    "object_name": "bench",
+    "subject_box": [
+      105,
+      22,
+      122,
+      55
+    ],
+    "object_box": [
+      65,
+      20,
+      320,
+      42
+    ]
+  },
+  {
+    "image_id": 2318755,
+    "image_file": "2318755.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "person",
+    "predicate": "sitting on",
+    "object_name": "bench",
+    "subject_box": [
+      143,
+      18,
+      162,
+      45
+    ],
+    "object_box": [
+      77,
+      37,
+      198,
+      52
+    ]
+  },
+  {
+    "image_id": 3843,
+    "image_file": "3843.jpg",
+    "image_w": 650,
+    "image_h": 600,
+    "subject_name": "tree",
+    "predicate": "near",
+    "object_name": "tree",
+    "subject_box": [
+      63,
+      0,
+      364,
+      446
+    ],
+    "object_box": [
+      0,
+      0,
+      165,
+      558
+    ]
+  },
+  {
+    "image_id": 3843,
+    "image_file": "3843.jpg",
+    "image_w": 650,
+    "image_h": 600,
+    "subject_name": "tree",
+    "predicate": "near",
+    "object_name": "tree",
+    "subject_box": [
+      3,
+      0,
+      203,
+      550
+    ],
+    "object_box": [
+      70,
+      0,
+      391,
+      449
+    ]
+  },
+  {
+    "image_id": 2400292,
+    "image_file": "2400292.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "person",
+    "predicate": "wearing",
+    "object_name": "shirt",
+    "subject_box": [
+      450,
+      102,
+      466,
+      133
+    ],
+    "object_box": [
+      450,
+      109,
+      465,
+      125
+    ]
+  },
+  {
+    "image_id": 2400292,
+    "image_file": "2400292.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "person",
+    "predicate": "wearing",
+    "object_name": "shirt",
+    "subject_box": [
+      450,
+      102,
+      466,
+      133
+    ],
+    "object_box": [
+      450,
+      109,
+      465,
+      125
+    ]
+  },
+  {
+    "image_id": 2400292,
+    "image_file": "2400292.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "person",
+    "predicate": "wearing",
+    "object_name": "shirt",
+    "subject_box": [
+      450,
+      102,
+      466,
+      133
+    ],
+    "object_box": [
+      450,
+      109,
+      465,
+      125
+    ]
+  },
+  {
+    "image_id": 2400292,
+    "image_file": "2400292.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "person",
+    "predicate": "wearing",
+    "object_name": "shirt",
+    "subject_box": [
+      450,
+      102,
+      466,
+      133
+    ],
+    "object_box": [
+      450,
+      109,
+      465,
+      125
+    ]
+  },
+  {
+    "image_id": 2406375,
+    "image_file": "2406375.jpg",
+    "image_w": 420,
+    "image_h": 550,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      255,
+      146,
+      327,
+      231
+    ],
+    "object_box": [
+      131,
+      75,
+      327,
+      343
+    ]
+  },
+  {
+    "image_id": 2359006,
+    "image_file": "2359006.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "tree",
+    "predicate": "in front of",
+    "object_name": "building",
+    "subject_box": [
+      297,
+      0,
+      471,
+      166
+    ],
+    "object_box": [
+      309,
+      0,
+      484,
+      164
+    ]
+  },
+  {
+    "image_id": 2408318,
+    "image_file": "2408318.jpg",
+    "image_w": 370,
+    "image_h": 290,
+    "subject_name": "car",
+    "predicate": "near",
+    "object_name": "car",
+    "subject_box": [
+      66,
+      203,
+      209,
+      239
+    ],
+    "object_box": [
+      1,
+      187,
+      66,
+      238
+    ]
+  },
+  {
+    "image_id": 2324758,
+    "image_file": "2324758.jpg",
+    "image_w": 530,
+    "image_h": 420,
+    "subject_name": "person",
+    "predicate": "wearing",
+    "object_name": "shirt",
+    "subject_box": [
+      40,
+      41,
+      452,
+      372
+    ],
+    "object_box": [
+      205,
+      247,
+      350,
+      373
+    ]
+  },
+  {
+    "image_id": 2324758,
+    "image_file": "2324758.jpg",
+    "image_w": 530,
+    "image_h": 420,
+    "subject_name": "person",
+    "predicate": "wearing",
+    "object_name": "hat",
+    "subject_box": [
+      40,
+      41,
+      452,
+      372
+    ],
+    "object_box": [
+      174,
+      43,
+      313,
+      115
+    ]
+  },
+  {
+    "image_id": 2343990,
+    "image_file": "2343990.jpg",
+    "image_w": 380,
+    "image_h": 550,
+    "subject_name": "tree",
+    "predicate": "on",
+    "object_name": "tree",
+    "subject_box": [
+      71,
+      207,
+      151,
+      269
+    ],
+    "object_box": [
+      71,
+      207,
+      151,
+      269
+    ]
+  },
+  {
+    "image_id": 2343990,
+    "image_file": "2343990.jpg",
+    "image_w": 380,
+    "image_h": 550,
+    "subject_name": "tree",
+    "predicate": "on",
+    "object_name": "tree",
+    "subject_box": [
+      126,
+      231,
+      179,
+      275
+    ],
+    "object_box": [
+      126,
+      231,
+      179,
+      275
+    ]
+  },
+  {
+    "image_id": 2343990,
+    "image_file": "2343990.jpg",
+    "image_w": 380,
+    "image_h": 550,
+    "subject_name": "tree",
+    "predicate": "on",
+    "object_name": "tree",
+    "subject_box": [
+      164,
+      223,
+      247,
+      278
+    ],
+    "object_box": [
+      164,
+      223,
+      247,
+      278
+    ]
+  },
+  {
+    "image_id": 3767,
+    "image_file": "3767.jpg",
+    "image_w": 440,
+    "image_h": 560,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      277,
+      461,
+      281,
+      470
+    ],
+    "object_box": [
+      256,
+      434,
+      296,
+      503
+    ]
+  },
+  {
+    "image_id": 3767,
+    "image_file": "3767.jpg",
+    "image_w": 440,
+    "image_h": 560,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      190,
+      218,
+      197,
+      245
+    ],
+    "object_box": [
+      133,
+      0,
+      258,
+      505
+    ]
+  },
+  {
+    "image_id": 3767,
+    "image_file": "3767.jpg",
+    "image_w": 440,
+    "image_h": 560,
+    "subject_name": "building",
+    "predicate": "behind",
+    "object_name": "building",
+    "subject_box": [
+      281,
+      313,
+      308,
+      509
+    ],
+    "object_box": [
+      302,
+      70,
+      382,
+      510
+    ]
+  },
+  {
+    "image_id": 3767,
+    "image_file": "3767.jpg",
+    "image_w": 440,
+    "image_h": 560,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      57,
+      244,
+      64,
+      265
+    ],
+    "object_box": [
+      19,
+      120,
+      155,
+      465
+    ]
+  },
+  {
+    "image_id": 3767,
+    "image_file": "3767.jpg",
+    "image_w": 440,
+    "image_h": 560,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      56,
+      343,
+      65,
+      361
+    ],
+    "object_box": [
+      8,
+      177,
+      155,
+      480
+    ]
+  },
+  {
+    "image_id": 3767,
+    "image_file": "3767.jpg",
+    "image_w": 440,
+    "image_h": 560,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      56,
+      343,
+      65,
+      361
+    ],
+    "object_box": [
+      8,
+      123,
+      156,
+      481
+    ]
+  },
+  {
+    "image_id": 3767,
+    "image_file": "3767.jpg",
+    "image_w": 440,
+    "image_h": 560,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      63,
+      374,
+      71,
+      408
+    ],
+    "object_box": [
+      8,
+      177,
+      155,
+      480
+    ]
+  },
+  {
+    "image_id": 3767,
+    "image_file": "3767.jpg",
+    "image_w": 440,
+    "image_h": 560,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      291,
+      390,
+      307,
+      424
+    ],
+    "object_box": [
+      289,
+      187,
+      351,
+      500
+    ]
+  },
+  {
+    "image_id": 3767,
+    "image_file": "3767.jpg",
+    "image_w": 440,
+    "image_h": 560,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      288,
+      329,
+      301,
+      364
+    ],
+    "object_box": [
+      285,
+      145,
+      372,
+      484
+    ]
+  },
+  {
+    "image_id": 3767,
+    "image_file": "3767.jpg",
+    "image_w": 440,
+    "image_h": 560,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      124,
+      315,
+      128,
+      328
+    ],
+    "object_box": [
+      100,
+      269,
+      155,
+      471
+    ]
+  },
+  {
+    "image_id": 3767,
+    "image_file": "3767.jpg",
+    "image_w": 440,
+    "image_h": 560,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      129,
+      320,
+      134,
+      336
+    ],
+    "object_box": [
+      103,
+      272,
+      155,
+      463
+    ]
+  },
+  {
+    "image_id": 3767,
+    "image_file": "3767.jpg",
+    "image_w": 440,
+    "image_h": 560,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      117,
+      385,
+      123,
+      398
+    ],
+    "object_box": [
+      107,
+      277,
+      152,
+      470
+    ]
+  },
+  {
+    "image_id": 3767,
+    "image_file": "3767.jpg",
+    "image_w": 440,
+    "image_h": 560,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      124,
+      389,
+      128,
+      401
+    ],
+    "object_box": [
+      107,
+      272,
+      157,
+      464
+    ]
+  },
+  {
+    "image_id": 3767,
+    "image_file": "3767.jpg",
+    "image_w": 440,
+    "image_h": 560,
+    "subject_name": "building",
+    "predicate": "near",
+    "object_name": "building",
+    "subject_box": [
+      1,
+      10,
+      165,
+      509
+    ],
+    "object_box": [
+      133,
+      0,
+      258,
+      505
+    ]
+  },
+  {
+    "image_id": 3767,
+    "image_file": "3767.jpg",
+    "image_w": 440,
+    "image_h": 560,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "building",
+    "subject_box": [
+      43,
+      330,
+      56,
+      365
+    ],
+    "object_box": [
+      275,
+      36,
+      383,
+      505
+    ]
+  },
+  {
+    "image_id": 2390073,
+    "image_file": "2390073.jpg",
+    "image_w": 550,
+    "image_h": 420,
+    "subject_name": "window",
+    "predicate": "on",
+    "object_name": "door",
+    "subject_box": [
+      216,
+      4,
+      314,
+      150
+    ],
+    "object_box": [
+      190,
+      1,
+      341,
+      272
+    ]
+  },
+  {
+    "image_id": 2348964,
+    "image_file": "2348964.jpg",
+    "image_w": 550,
+    "image_h": 380,
+    "subject_name": "person",
+    "predicate": "has",
+    "object_name": "shirt",
+    "subject_box": [
+      405,
+      1,
+      498,
+      192
+    ],
+    "object_box": [
+      412,
+      29,
+      494,
+      145
+    ]
+  }
+]

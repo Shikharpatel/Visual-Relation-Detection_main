@@ -1,0 +1,145 @@
+# =============================================================================
+# MotifNet (Neural Motifs) Configuration for VRD
+# =============================================================================
+# This configuration extends the baseline with BiLSTM context encoding.
+# Based on: Zellers et al., "Neural Motifs: Scene Graph Parsing with Global Context", CVPR 2018
+
+# Random seed for reproducibility
+seed: 42
+
+# Evaluation mode: predcls | sgcls | sgdet
+mode: predcls
+
+# =============================================================================
+# Dataset Configuration
+# =============================================================================
+dataset:
+  name: visual_genome
+  raw_dir: data/raw
+  processed_dir: data/processed
+  image_dir: data/images
+  num_obj_classes: 104
+  num_pred_classes: 53
+  max_objects: 100
+  max_relations: 200
+  filter_empty: true
+
+# =============================================================================
+# Model Configuration - MotifNet
+# =============================================================================
+model:
+  # Model type: baseline | motifnet
+  type: motifnet
+
+  # Visual feature dimension
+  feature_dim: 256
+
+  # Hidden layer dimension for MLP classifier
+  hidden_dim: 512
+
+  # Spatial feature dimension
+  spatial_dim: 128
+
+  # Dropout probability
+  dropout: 0.3
+
+  # ----- MotifNet-specific parameters -----
+
+  # LSTM hidden dimension (will be split for bidirectional)
+  lstm_hidden_dim: 256
+
+  # Number of LSTM layers
+  lstm_num_layers: 2
+
+  # Whether to use object-level BiLSTM context
+  # If true, objects are sorted spatially and processed through BiLSTM
+  use_object_context: true
+
+  # Whether to use edge-level BiLSTM context
+  # If true, relation pairs are processed through BiLSTM for edge context
+  use_edge_context: true
+
+  # ----- Shared parameters -----
+
+  # Whether to use frequency bias
+  use_bias: true
+
+  # Weight for frequency bias
+  bias_alpha: 1.0
+
+  # Whether to use union box features
+  use_union_features: true
+
+  # Detector settings (for SGDet mode)
+  detector_backbone: fasterrcnn_resnet50_fpn
+  detector_pretrained: true
+  trainable_backbone_layers: 3
+
+# =============================================================================
+# Training Configuration
+# =============================================================================
+training:
+  # Batch size (may need to reduce for MotifNet due to LSTM memory)
+  batch_size: 16
+
+  # Number of data loading workers
+  num_workers: 4
+
+  # Learning rate (slightly lower for MotifNet stability)
+  lr: 0.001
+
+  # Weight decay
+  weight_decay: 0.0001
+
+  # Number of training epochs (MotifNet may need more epochs)
+  num_epochs: 30
+
+  # Learning rate decay step
+  lr_decay_step: 10
+
+  # Learning rate decay factor
+  lr_decay_gamma: 0.5
+
+  # Gradient clipping (important for LSTM stability)
+  clip_grad: 5.0
+
+  # Evaluate every N epochs
+  eval_every: 1
+
+  # Synthetic dataset sizes
+  synthetic_train_size: 5000
+  synthetic_val_size: 1000
+
+# =============================================================================
+# Evaluation Configuration
+# =============================================================================
+evaluation:
+  k_values: [20, 50, 100]
+  iou_threshold: 0.5
+  top_k: 100
+
+# =============================================================================
+# Output Configuration
+# =============================================================================
+output:
+  output_dir: outputs
+  save_checkpoints: true
+  checkpoint_every: 1
+  use_tensorboard: true
+
+# =============================================================================
+# Ablation Study Configurations
+# =============================================================================
+# To run ablations, create copies of this file with these modifications:
+#
+# 1. Object context only:
+#    use_object_context: true
+#    use_edge_context: false
+#
+# 2. Edge context only:
+#    use_object_context: false
+#    use_edge_context: true
+#
+# 3. No context (baseline-like):
+#    use_object_context: false
+#    use_edge_context: false

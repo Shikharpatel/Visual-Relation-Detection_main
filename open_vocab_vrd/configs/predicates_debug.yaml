@@ -1,0 +1,20 @@
+# Minimal predicate set for debug runs.
+# Top-5 most frequent VG predicates that appear in our object set.
+predicates:
+  - "on"
+  - "has"
+  - "wearing"
+  - "holding"
+  - "near"
+
+objects:
+  - "person"
+  - "car"
+  - "dog"
+  - "cat"
+  - "chair"
+  - "table"
+  - "cup"
+  - "tree"
+  - "bicycle"
+  - "horse"

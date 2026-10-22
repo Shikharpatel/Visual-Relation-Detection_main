@@ -1,0 +1,83 @@
+python : Warning: You 
+are sending 
+unauthenticated 
+requests to the HF 
+Hub. Please set a 
+HF_TOKEN to enable 
+higher rate limits 
+and faster downloads.
+At line:1 char:1
++ python -m src.infer 
+--config 
+configs/zeroshot.yaml 
+--checkpoint outpu ...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (Warning: Y   
+ ou ar...ster down    
+loads.:String) []    
+, RemoteException
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+WARNING:huggingface_hu
+b.utils._http:Warning:
+ You are sending 
+unauthenticated 
+requests to the HF 
+Hub. Please set a 
+HF_TOKEN to enable 
+higher rate limits 
+and faster downloads.
+C:\Users\sp373\AppData
+\Roaming\Python\Python
+313\site-packages\open
+_clip\factory.py:450: 
+UserWarning: 
+QuickGELU mismatch 
+between final model 
+config 
+(quick_gelu=False) 
+and pretrained tag 
+'openai' 
+(quick_gelu=True).
+  warnings.warn(
+Using device: cuda
+Loading model from outputs\predcls_20260328_025704\best_model.pt
+Loading ZeroShotSceneGraphModel (CLIP 512-dim)
+ZeroShotSceneGraphModel: 1,207,988 trainable / 1,207,988 total params
+Loaded vocabularies: 151 objects, 51 predicates
+Loaded frequency bias from data\processed\frequency_bias.pt
+Loaded frequency bias
+Loading image from test.jpg
+Loaded 151 object classes for mapping
+Loading pretrained Faster R-CNN detector...
+Detecting objects...
+Detected 2 objects above threshold 0.7
+
+Detected objects:
+  1. person (confidence: 0.993)
+  2. person (confidence: 0.805)
+Input: 2 objects, 2 potential relations
+Initializing CLIP feature extractor for inference...
+Extracting CLIP features from detected object crops...
+Loaded CLIP ViT-B-32 (openai) ? all parameters frozen
+Extracted 2 CLIP features (dim=512)
+
+Found 2 predictions
+
+============================================================
+Top Predicted Relations
+============================================================
+   1. person --[has]--> person  (score: 0.2146)
+   2. person --[on]--> person  (score: 0.2140)
+============================================================
+
+Scene Graph: 2 objects, 2 relations
+
+Inference complete!

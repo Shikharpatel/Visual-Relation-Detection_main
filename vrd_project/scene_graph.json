@@ -1,0 +1,72 @@
+{
+  "objects": [
+    {
+      "id": 0,
+      "label": "cat",
+      "box": [
+        80.74259948730469,
+        0.0,
+        400.0,
+        218.00294494628906
+      ]
+    },
+    {
+      "id": 1,
+      "label": "dog",
+      "box": [
+        2.351240873336792,
+        6.654696464538574,
+        251.99134826660156,
+        194.92819213867188
+      ]
+    },
+    {
+      "id": 2,
+      "label": "cat",
+      "box": [
+        8.156055450439453,
+        5.802096843719482,
+        274.4403991699219,
+        188.9833221435547
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "subj_id": 1,
+      "obj_id": 0,
+      "predicate": "next to",
+      "score": 0.29
+    },
+    {
+      "subj_id": 0,
+      "obj_id": 1,
+      "predicate": "next to",
+      "score": 0.2807
+    },
+    {
+      "subj_id": 2,
+      "obj_id": 0,
+      "predicate": "next to",
+      "score": 0.2435
+    },
+    {
+      "subj_id": 0,
+      "obj_id": 2,
+      "predicate": "next to",
+      "score": 0.2353
+    },
+    {
+      "subj_id": 1,
+      "obj_id": 2,
+      "predicate": "on",
+      "score": 0.159
+    },
+    {
+      "subj_id": 2,
+      "obj_id": 1,
+      "predicate": "on",
+      "score": 0.1589
+    }
+  ]
+}

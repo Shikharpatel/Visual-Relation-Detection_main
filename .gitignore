@@ -1,0 +1,30 @@
+# Data
+vrd_project/data/raw/
+vrd_project/data/images/
+vrd_project/data/processed/
+
+# Model outputs & checkpoints
+vrd_project/outputs/
+*.pt
+*.pth
+
+# Logs
+*.log
+nohup.out
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.eggs/
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Env
+.env
+venv/
+.venv/

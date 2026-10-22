@@ -1,0 +1,185 @@
+# =============================================================================
+# Advanced MotifNet Configuration with All Improvements
+# =============================================================================
+# This configuration includes:
+# - MotifNet BiLSTM context encoding
+# - Focal loss for hard examples
+# - Class weights for imbalanced predicates
+# - VTransE auxiliary loss
+# - Larger LSTM dimensions
+# - Label smoothing
+
+# Random seed for reproducibility
+seed: 42
+
+# Evaluation mode: predcls | sgcls | sgdet
+mode: predcls
+
+# =============================================================================
+# Dataset Configuration
+# =============================================================================
+dataset:
+  name: visual_genome
+  raw_dir: data/raw
+  processed_dir: data/processed
+  image_dir: data/images
+  num_obj_classes: 104
+  num_pred_classes: 53
+  max_objects: 100
+  max_relations: 200
+  filter_empty: true
+
+# =============================================================================
+# Model Configuration - Advanced MotifNet
+# =============================================================================
+model:
+  # Model type: baseline | motifnet
+  type: motifnet
+
+  # Visual feature dimension
+  feature_dim: 256
+
+  # Hidden layer dimension for MLP classifier
+  hidden_dim: 512
+
+  # Spatial feature dimension
+  spatial_dim: 128
+
+  # Dropout probability
+  dropout: 0.3
+
+  # ----- MotifNet LSTM parameters -----
+
+  # LSTM hidden dimension (increased for better capacity)
+  lstm_hidden_dim: 512
+
+  # Number of LSTM layers
+  lstm_num_layers: 2
+
+  # Whether to use object-level BiLSTM context
+  use_object_context: true
+
+  # Whether to use edge-level BiLSTM context
+  use_edge_context: true
+
+  # ----- VTransE parameters -----
+
+  # Whether to use VTransE auxiliary loss
+  use_vtranse: false
+
+  # VTransE embedding dimension
+  vtranse_embed_dim: 256
+
+  # Weight for VTransE auxiliary loss
+  vtranse_weight: 0.1
+
+  # ----- Frequency bias parameters -----
+
+  # Whether to use frequency bias
+  use_bias: true
+
+  # Weight for frequency bias
+  bias_alpha: 1.0
+
+  # Whether to use learnable frequency bias (vs fixed)
+  learnable_bias: false
+
+  # ----- Other parameters -----
+
+  # Whether to use union box features
+  use_union_features: true
+
+  # Detector settings (for SGDet mode)
+  detector_backbone: fasterrcnn_resnet50_fpn
+  detector_pretrained: true
+  trainable_backbone_layers: 3
+
+# =============================================================================
+# Training Configuration
+# =============================================================================
+training:
+  # Batch size (reduced for 6GB VRAM with Faster R-CNN feature extraction)
+  batch_size: 4
+
+  # Number of data loading workers
+  num_workers: 4
+
+  # Learning rate
+  lr: 0.001
+
+  # Weight decay
+  weight_decay: 0.0001
+
+  # Number of training epochs
+  num_epochs: 30
+
+  # Learning rate decay step
+  lr_decay_step: 10
+
+  # Learning rate decay factor
+  lr_decay_gamma: 0.5
+
+  # Gradient clipping (important for LSTM stability)
+  clip_grad: 5.0
+
+  # Evaluate every N epochs
+  eval_every: 1
+
+  # ----- Loss function parameters -----
+
+  # Use focal loss for hard examples
+  use_focal_loss: false
+
+  # Focal loss gamma (higher = more focus on hard examples)
+  focal_gamma: 2.0
+
+  # Focal loss alpha
+  focal_alpha: 0.25
+
+  # Use class weights for imbalanced predicates
+  use_class_weights: false
+
+  # Class weighting method: inverse_freq | inverse_sqrt | effective_samples
+  class_weight_method: inverse_sqrt
+
+  # Label smoothing factor (0 = disabled)
+  label_smoothing: 0.0
+
+  # Synthetic dataset sizes (when using --synthetic)
+  synthetic_train_size: 5000
+  synthetic_val_size: 1000
+
+# =============================================================================
+# Evaluation Configuration
+# =============================================================================
+evaluation:
+  k_values: [20, 50, 100]
+  iou_threshold: 0.5
+  top_k: 100
+
+# =============================================================================
+# Output Configuration
+# =============================================================================
+output:
+  output_dir: outputs
+  save_checkpoints: true
+  checkpoint_every: 1
+  use_tensorboard: true
+
+# =============================================================================
+# Detection Evaluation Configuration (Phrase Det / Relationship Det)
+# =============================================================================
+detection_eval:
+  detection_threshold: 0.2
+  max_objects: 100
+  nms_threshold: 0.6
+
+# =============================================================================
+# Inference Configuration
+# =============================================================================
+inference:
+  # Use TDE (Total Direct Effect) for unbiased inference
+  use_tde: false
+
+  # TDE coefficient (how much to subtract bias effect)
+  tde_coefficient: 0.5

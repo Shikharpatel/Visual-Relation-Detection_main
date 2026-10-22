@@ -1,0 +1,38 @@
+# Visual Relationship Detection Project - Requirements
+# Python 3.10+ required
+
+# Core dependencies
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Data processing
+Pillow>=9.4.0
+tqdm>=4.65.0
+
+# Configuration
+PyYAML>=6.0
+
+# Visualization
+matplotlib>=3.7.0
+
+# Optional: Graph visualization
+networkx>=3.0
+
+# Testing
+pytest>=7.3.0
+
+# Optional: Explainability
+# shap>=0.42.0  # Uncomment if using SHAP explanations
+
+# Optional: TensorBoard logging
+# tensorboard>=2.12.0  # Uncomment for TensorBoard support
+
+# Optional: Jupyter notebook support
+# jupyter>=1.0.0
+# ipywidgets>=8.0.0
+
+# Zero-Shot VRD (CLIP + LLM)
+open_clip_torch>=2.20.0
+transformers>=4.30.0

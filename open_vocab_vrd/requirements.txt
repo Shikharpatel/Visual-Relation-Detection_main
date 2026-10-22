@@ -1,0 +1,14 @@
+torch>=2.0
+torchvision>=0.15
+# YOLO-World via ultralytics
+ultralytics>=8.1
+# CLIP — install from source
+git+https://github.com/openai/CLIP.git
+Pillow>=9.0
+numpy
+scipy
+PyYAML
+tqdm
+matplotlib
+opencv-python
+einops

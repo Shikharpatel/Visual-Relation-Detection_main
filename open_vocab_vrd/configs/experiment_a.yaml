@@ -1,0 +1,62 @@
+# Experiment A: Visual-only baseline (no prior).
+# Detector + CLIP + RelationHead only. FusionModule disabled.
+# Use this as the baseline for the comparison table.
+#
+# Run:
+#   python scripts/preprocess_from_processed.py --config configs/experiment_a.yaml
+#   python scripts/warmup_cache.py              --config configs/experiment_a.yaml
+#   python scripts/train.py                     --config configs/experiment_a.yaml
+#   python scripts/eval.py --config configs/experiment_a.yaml --checkpoint outputs/.../best.pt
+
+data:
+  vg_raw_dir: "../vrd_project/data/raw"
+  images_dir: "../vrd_project/data/images/VG_100K"
+  processed_dir: "./data"
+  cache_dir: "./cache"
+
+detector:
+  model_path: "yolov8s-world.pt"
+  vocab_file: "configs/predicates.yaml"
+  top_k: 10
+  conf_thresh: 0.3
+  nms_iou: 0.5
+
+clip:
+  model: "ViT-B/32"
+  device: "cuda"
+  batch_size: 32
+
+spatial:
+  feature_dim: 13
+
+relation_head:
+  input_dim: 1037
+  hidden_dims: [512, 256]
+  dropout: 0.3
+  use_layer_norm: true
+
+prior:
+  enabled: false        # ← DISABLED: pure visual model, no commonsense prior
+  path: "data/llm_prior.json"
+  alpha_init: 1.0
+  tau_init: 1.0
+  learnable: false
+
+training:
+  epochs: 30
+  batch_size: 128
+  lr: 0.001
+  weight_decay: 0.0001
+  lr_scheduler: "cosine"
+  eval_every: 1
+  loss: "focal"         # FocalLoss(gamma=2.0) — addresses rare-class imbalance
+  focal_gamma: 2.0
+
+eval:
+  recall_k: [20, 50, 100]
+  top_k_per_image: 100
+
+cache:
+  enabled: true
+  clip_subdir: "clip_embeddings"
+  detector_subdir: "detections"

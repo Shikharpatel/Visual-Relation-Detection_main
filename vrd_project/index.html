@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VRD Research Demo — SRMIST</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+:root {
+  --bg: #0a0e1a;
+  --surface: #111827;
+  --surface2: #1a2236;
+  --surface3: #1e293b;
+  --accent: #3d7fff;
+  --accent2: #6b9fff;
+  --accent-glow: rgba(61,127,255,0.15);
+  --text: #e2e8f0;
+  --muted: #64748b;
+  --danger: #ef4444;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --border: #1e2d4a;
+  --sidebar-w: 220px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+.mono { font-family: 'Space Mono', monospace; }
+
+/* SIDEBAR */
+#sidebar {
+  position: fixed;
+  left: 0; top: 0;
+  width: var(--sidebar-w);
+  height: 100vh;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  padding: 0;
+}
+.sidebar-logo {
+  padding: 24px 20px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.sidebar-logo .logo-text {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+.sidebar-logo .logo-sub {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.nav-section {
+  padding: 16px 12px 8px;
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  border-left: 3px solid transparent;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
+.nav-link:hover { color: var(--text); background: var(--surface2); }
+.nav-link.active { color: var(--accent); border-left: 3px solid var(--accent); background: var(--accent-glow); }
+.nav-icon { font-size: 15px; width: 18px; text-align: center; }
+.sidebar-footer {
+  margin-top: auto;
+  padding: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* HEADER */
+#header {
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-w);
+  right: 0;
+  height: 44px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  z-index: 90;
+  gap: 12px;
+}
+.header-badge {
+  background: var(--accent-glow);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+}
+.header-title {
+  font-size: 12px;
+  color: var(--muted);
+  flex: 1;
+}
+.header-authors {
+  font-size: 11px;
+  color: var(--muted);
+  font-family: 'Space Mono', monospace;
+}
+
+/* MAIN */
+#main {
+  margin-left: var(--sidebar-w);
+  padding-top: 44px;
+  min-height: 100vh;
+}
+.page { display: none; padding: 28px 32px; }
+.page.active { display: block; }
+
+/* PAGE TITLE */
+.page-title {
+  margin-bottom: 4px;
+}
+.page-title h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+.page-title p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* SECTIONS */
+.section {
+  margin-top: 32px;
+}
+.section-title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* STAT CARDS */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 80px; height: 80px;
+  background: radial-gradient(circle at top right, var(--accent-glow), transparent 70%);
+}
+.stat-card .label {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+.stat-card .value {
+  font-family: 'Space Mono', monospace;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+.stat-card .sub {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.stat-card.green { border-left-color: var(--success); }
+.stat-card.green .value { color: var(--success); }
+.stat-card.orange { border-left-color: var(--warning); }
+.stat-card.orange .value { color: var(--warning); }
+.stat-card.red { border-left-color: var(--danger); }
+
+/* TABLES */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.data-table th {
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface2);
+}
+.data-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: var(--surface2); }
+.data-table .mono-cell {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+}
+.data-table .highlight-row td { color: var(--accent); font-weight: 600; }
+.table-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* CALLOUT */
+.callout {
+  background: var(--accent-glow);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--accent2);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.callout .icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+.callout.warning { background: rgba(245,158,11,0.1); border-color: var(--warning); color: var(--warning); }
+
+/* CHART CONTAINERS */
+.chart-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+}
+.chart-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+/* TWO COLUMN LAYOUTS */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+
+/* PIPELINE CARDS */
+.pipeline-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+}
+.pipeline-box h3 {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+.pipeline-box .tag {
+  display: inline-block;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 12px;
+}
+.tag-actual { background: rgba(16,185,129,0.15); color: var(--success); border: 1px solid var(--success); }
+.tag-proj { background: rgba(61,127,255,0.1); color: var(--accent); border: 1px solid var(--accent); }
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+.metric-row:last-child { border-bottom: none; }
+.metric-row .m-label { color: var(--muted); }
+.metric-row .m-val { font-family: 'Space Mono', monospace; color: var(--accent); font-size: 14px; font-weight: 700; }
+.metric-row .m-val.green { color: var(--success); }
+.metric-row .m-val.orange { color: var(--warning); }
+
+/* ====== PAGE 2 ====== */
+.demo-layout {
+  display: grid;
+  grid-template-columns: 42% 1fr;
+  gap: 20px;
+  align-items: start;
+}
+.upload-panel { display: flex; flex-direction: column; gap: 16px; }
+
+#dropzone {
+  border: 2px dashed var(--border);
+  border-radius: 10px;
+  padding: 32px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: var(--surface);
+  color: var(--muted);
+}
+#dropzone:hover, #dropzone.drag-over {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+  color: var(--text);
+}
+#dropzone .dz-icon { font-size: 36px; margin-bottom: 10px; display: block; }
+#dropzone .dz-hint { font-size: 12px; margin-top: 6px; }
+
+.canvas-wrap {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  display: none;
+}
+#imageCanvas { display: block; width: 100%; }
+
+/* SPINNER */
+.spinner-overlay {
+  position: absolute; inset: 0;
+  background: rgba(10,14,26,0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  display: none;
+}
+.spinner {
+  width: 36px; height: 36px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinner-text { font-size: 12px; color: var(--muted); font-family: 'Space Mono', monospace; }
+
+/* RESULTS PANEL */
+.results-panel { display: flex; flex-direction: column; gap: 16px; }
+.results-hidden { display: none; }
+
+.relation-list { display: flex; flex-direction: column; gap: 6px; }
+.rel-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  transition: background 0.15s;
+}
+.rel-card:hover { background: var(--surface2); border-color: var(--accent); }
+.rel-triplet { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.rel-subj, .rel-obj { font-weight: 600; color: var(--text); }
+.rel-pred {
+  color: var(--accent);
+  font-size: 11px;
+  background: var(--accent-glow);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  padding: 1px 7px;
+  font-family: 'Space Mono', monospace;
+}
+.rel-score {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--success);
+  background: rgba(16,185,129,0.1);
+  border: 1px solid rgba(16,185,129,0.3);
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* SCENE GRAPH */
+#graphCanvas {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+/* STATS STRIP */
+.stats-strip {
+  display: flex;
+  gap: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.stat-pill {
+  flex: 1;
+  text-align: center;
+  padding: 10px 8px;
+  border-right: 1px solid var(--border);
+  font-size: 11px;
+}
+.stat-pill:last-child { border-right: none; }
+.stat-pill .sp-val {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  display: block;
+}
+.stat-pill .sp-label { color: var(--muted); font-size: 10px; }
+
+/* JSON */
+details summary {
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+details[open] summary { border-radius: 8px 8px 0 0; border-bottom-color: transparent; }
+details summary::after { content: '▾'; font-size: 14px; }
+details[open] summary::after { content: '▴'; }
+#jsonOutput {
+  background: #0d1117;
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 16px;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  line-height: 1.7;
+  overflow-x: auto;
+  white-space: pre;
+  max-height: 320px;
+  overflow-y: auto;
+}
+.j-key { color: #79c0ff; }
+.j-str { color: #a5d6ff; }
+.j-num { color: #f0883e; }
+.j-bool { color: #ff7b72; }
+
+/* SECTION CARDS */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* RANK BADGE */
+.rank { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; }
+.rank-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); display: inline-block; }
+.rank-dot.gold { background: #f59e0b; }
+.rank-dot.silver { background: #94a3b8; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<nav id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-text">VRD · Research Demo</div>
+    <div class="logo-sub">Visual Genome VG150 Benchmark</div>
+  </div>
+  <div class="nav-section">Navigation</div>
+  <button class="nav-link active" id="nav1" onclick="showPage(1)">
+    <span class="nav-icon">📊</span> Performance Dashboard
+  </button>
+  <button class="nav-link" id="nav2" onclick="showPage(2)">
+    <span class="nav-icon">🔍</span> Live Inference Demo
+  </button>
+  <div class="nav-section" style="margin-top:16px">Model</div>
+  <div style="padding:0 16px; font-size:11px; color:var(--muted); line-height:1.8;">
+    <div>SceneGraphModel</div>
+    <div>ResNet50-FPN</div>
+    <div>MotifNet+BiLSTM</div>
+    <div style="margin-top:6px; color:var(--accent);">Best R@50: 68.88%</div>
+    <div style="color:var(--success);">Best mR@50: 41.15%</div>
+  </div>
+  <div class="sidebar-footer">
+    <div>21CSP302L · SRMIST</div>
+    <div style="margin-top:3px; color:var(--accent);">Harshul Bagri</div>
+    <div style="color:var(--accent);">Shikhar Patel</div>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<div id="header">
+  <span class="header-badge">VRD DEMO</span>
+  <span class="header-title">Visual Relationship Detection Research Demo</span>
+  <span class="header-authors">SRMIST · 21CSP302L · Harshul Bagri &amp; Shikhar Patel</span>
+  <span id="backendDot" title="Backend status" style="width:8px;height:8px;border-radius:50%;background:#334155;display:inline-block;margin-left:14px;flex-shrink:0;transition:background 0.3s;"></span>
+  <span id="backendLabel" style="font-size:10px;color:var(--muted);margin-left:5px;white-space:nowrap;">checking...</span>
+</div>
+
+<!-- MAIN -->
+<div id="main">
+
+<!-- ===== PAGE 1: STATS DASHBOARD ===== -->
+<div id="page1" class="page active">
+  <div class="page-title">
+    <h1>VRD System — Performance Dashboard</h1>
+    <p>Image-Based Visual Relationship Detection &nbsp;·&nbsp; Visual Genome VG150 Benchmark &nbsp;·&nbsp; PredCls Evaluation Mode</p>
+  </div>
+
+  <!-- Section 1: Headline Stats -->
+  <div class="section">
+    <div class="section-title">Key Results</div>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="label">Predicate Classification</div>
+        <div class="value mono">68.88%</div>
+        <div class="sub">PredCls R@50 &nbsp;·&nbsp; 30 epochs &nbsp;·&nbsp; α=1.0</div>
+      </div>
+      <div class="stat-card green">
+        <div class="label">Mean Recall — LSTM Architecture</div>
+        <div class="value mono">41.15%</div>
+        <div class="sub">mR@50 LSTM+VTransE &nbsp;·&nbsp; 8 epochs (partial)</div>
+      </div>
+      <div class="stat-card orange">
+        <div class="label">+27.08pp over CVPR 2018</div>
+        <div class="value mono">+27.08</div>
+        <div class="sub">Neural Motifs 41.80% → Ours 68.88%</div>
+      </div>
+      <div class="stat-card" style="border-left-color:#a855f7">
+        <div class="label">Projected @ Epoch 25, Phase 2</div>
+        <div class="value mono" style="color:#a855f7">~65%</div>
+        <div class="sub">Detector GT Recall &nbsp;·&nbsp; Full backbone fine-tune</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2: Bias Ablation -->
+  <div class="section">
+    <div class="section-title">Frequency Bias Ablation — PredCls Performance</div>
+    <div class="two-col">
+      <div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr>
+              <th>bias_alpha</th><th>R@20</th><th>R@50</th><th>R@100</th><th>mR@50</th>
+            </tr></thead>
+            <tbody>
+              <tr><td class="mono-cell">0.0 (no bias)</td><td>4.27%</td><td>4.38%</td><td>4.40%</td><td>10.39%</td></tr>
+              <tr><td class="mono-cell">0.3</td><td>66.20%</td><td>67.93%</td><td>68.09%</td><td>22.79%</td></tr>
+              <tr><td class="mono-cell">0.5</td><td>66.96%</td><td>68.66%</td><td>68.83%</td><td>22.53%</td></tr>
+              <tr class="highlight-row"><td class="mono-cell">1.0 (default)</td><td>67.16%</td><td>68.88%</td><td>69.02%</td><td>22.39%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout" style="margin-top:12px">
+          <span class="icon">⚡</span>
+          <span><strong>94% of PredCls R@50 comes from a parameter-free lookup table, not visual learning.</strong> Removing the frequency bias (α=0.0) collapses R@50 from 68.88% to 4.38%.</span>
+        </div>
+      </div>
+      <div class="chart-wrap">
+        <div class="chart-title">R@50 &amp; mR@50 vs. Bias Alpha</div>
+        <canvas id="biasChart" height="200"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3: Architecture Comparison -->
+  <div class="section">
+    <div class="section-title">Architecture Comparison — Baseline MLP vs. LSTM+VTransE</div>
+    <div class="two-col">
+      <div>
+        <div style="font-size:12px; font-weight:600; color:var(--text); margin-bottom:8px;">Baseline MLP (30 epochs, converged)</div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>alpha</th><th>R@50</th><th>mR@50</th></tr></thead>
+            <tbody>
+              <tr><td class="mono-cell">0.0</td><td>4.38%</td><td>10.39%</td></tr>
+              <tr><td class="mono-cell">0.3</td><td>67.93%</td><td>22.79%</td></tr>
+              <tr class="highlight-row"><td class="mono-cell">1.0</td><td>68.88%</td><td>22.39%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; color:var(--text); margin-bottom:8px;">LSTM+VTransE <span style="color:var(--warning); font-size:11px;">(8 epochs, partial — not converged)</span></div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>alpha</th><th>R@50</th><th>mR@50</th></tr></thead>
+            <tbody>
+              <tr><td class="mono-cell">0.0</td><td style="color:var(--danger)">0.03%</td><td>1.92%</td></tr>
+              <tr><td class="mono-cell">0.3</td><td>5.59%</td><td style="color:var(--success)">32.70%</td></tr>
+              <tr class="highlight-row"><td class="mono-cell">1.0</td><td>31.03%</td><td style="color:var(--success)">41.15%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:14px">
+      <span class="icon">🧠</span>
+      <span>Same frequency bias module. <strong>MLP exploits it for common predicates (R@50 ↑).</strong> <strong>LSTM exploits it for rare predicates (mR@50 ↑).</strong> Fundamentally different learned representations — LSTM at full convergence (30 epochs) is expected to achieve both high R@50 <em>and</em> high mR@50.</span>
+    </div>
+  </div>
+
+  <!-- Section 4: Published Comparison -->
+  <div class="section">
+    <div class="section-title">PredCls R@50 vs. Published Methods</div>
+    <div class="two-col" style="align-items:start">
+      <div class="chart-wrap">
+        <div class="chart-title">Comparison to State-of-the-Art (PredCls R@50)</div>
+        <canvas id="sotatChart" height="220"></canvas>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div class="card">
+          <div style="font-size:12px; color:var(--muted); margin-bottom:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em;">Ranked Results</div>
+          <div style="display:flex; flex-direction:column; gap:8px; font-size:13px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 10px; background:var(--accent-glow); border:1px solid var(--accent); border-radius:6px;">
+              <span style="color:var(--accent); font-weight:600;">🏆 Ours (α=1.0)</span>
+              <span class="mono" style="color:var(--accent); font-weight:700;">68.88%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:7px 10px; background:var(--surface2); border-radius:6px;">
+              <span style="color:var(--muted);">Pixel2Graph (NeurIPS'17)</span>
+              <span class="mono">68.00%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:7px 10px; background:var(--surface2); border-radius:6px;">
+              <span style="color:var(--muted);">Graph R-CNN (ECCV'18)</span>
+              <span class="mono">54.20%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:7px 10px; background:var(--surface2); border-radius:6px;">
+              <span style="color:var(--muted);">Neural Motifs (CVPR'18)</span>
+              <span class="mono">41.80%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:7px 10px; background:rgba(239,68,68,0.08); border-radius:6px; border:1px solid rgba(239,68,68,0.2);">
+              <span style="color:var(--muted);">Ours (no bias, α=0.0)</span>
+              <span class="mono" style="color:var(--danger);">4.38%</span>
+            </div>
+          </div>
+        </div>
+        <div class="callout warning">
+          <span class="icon">⚠</span>
+          <span>Neural Motifs is the prior CVPR 2018 SOTA at 41.80%. Our baseline exceeds it by <strong>+27.08pp</strong>.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 5: Pipeline Results -->
+  <div class="section">
+    <div class="section-title">Detection Pipeline — Current vs. Projected</div>
+    <div class="two-col" style="margin-bottom:16px">
+      <div class="pipeline-box">
+        <h3>Phase 1 — Current (Epoch 5)</h3>
+        <span class="tag tag-actual">ACTUAL RESULTS</span>
+        <div class="metric-row"><span class="m-label">Detector GT Recall</span><span class="m-val">25.97%</span></div>
+        <div class="metric-row"><span class="m-label">PhraseDet R@50</span><span class="m-val">3.51%</span></div>
+        <div class="metric-row"><span class="m-label">RelDet R@50</span><span class="m-val">2.14%</span></div>
+        <div class="metric-row"><span class="m-label">Backbone layers trained</span><span class="m-val">3 / 5</span></div>
+      </div>
+      <div class="pipeline-box">
+        <h3>Phase 2 — Projected (Epoch 25–35)</h3>
+        <span class="tag tag-proj">PROJECTED</span>
+        <div class="metric-row"><span class="m-label">Detector GT Recall</span><span class="m-val green">~65–75%</span></div>
+        <div class="metric-row"><span class="m-label">PhraseDet R@50</span><span class="m-val green">~22–31%</span></div>
+        <div class="metric-row"><span class="m-label">RelDet R@50</span><span class="m-val green">~11–17%</span></div>
+        <div class="metric-row"><span class="m-label">Backbone layers trained</span><span class="m-val green">5 / 5</span></div>
+      </div>
+    </div>
+    <div class="chart-wrap">
+      <div class="chart-title">Detector Recall &amp; PhraseDet R@50 vs. Training Epoch</div>
+      <canvas id="projectionChart" height="160"></canvas>
+    </div>
+  </div>
+
+  <!-- Section 6: Training Interventions -->
+  <div class="section">
+    <div class="section-title">Class-Balancing Ablation Study</div>
+    <div class="two-col">
+      <div class="chart-wrap">
+        <div class="chart-title">R@50 vs mR@50 — Training Configuration Comparison</div>
+        <canvas id="ablationChart" height="220"></canvas>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div class="card">
+          <div style="font-size:12px; color:var(--muted); margin-bottom:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em;">Findings</div>
+          <div style="font-size:13px; color:var(--text); line-height:1.8; display:flex; flex-direction:column; gap:10px;">
+            <div><span style="color:var(--accent); font-weight:600;">Baseline (α=1.0)</span><br>Best R@50 at 68.88%. Class weights not needed for common predicates.</div>
+            <div><span style="color:var(--danger); font-weight:600;">Focal + Class Weights</span><br>R@50 collapses to 23% — class weights over-penalise common predicates.</div>
+            <div><span style="color:var(--warning); font-weight:600;">Label Smoothing</span><br>R@50 stuck at 59% — prevents sharp confidence on high-frequency predicates.</div>
+            <div><span style="color:var(--success); font-weight:600;">LSTM+VTransE* (partial)</span><br>mR@50 reaches 41.15% — BiLSTM context greatly benefits rare predicate recall. Not yet converged.</div>
+          </div>
+        </div>
+        <div style="font-size:11px; color:var(--muted); padding:8px 12px; background:var(--surface); border:1px solid var(--border); border-radius:6px;">
+          * LSTM+VTransE trained for 8 epochs only (batch_size=4). Full 30-epoch run expected to significantly improve R@50 while maintaining high mR@50.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end page1 -->
+
+<!-- ===== PAGE 2: LIVE DEMO ===== -->
+<div id="page2" class="page">
+  <div class="page-title">
+    <h1>Visual Relationship Detection — Live Demo</h1>
+    <p>Upload an image to detect object relationships &nbsp;·&nbsp; Powered by SceneGraphModel + ResNet50-FPN</p>
+  </div>
+
+  <div class="section">
+    <div class="demo-layout">
+      <!-- LEFT: Upload + Canvas -->
+      <div class="upload-panel">
+        <div id="dropzone" onclick="document.getElementById('fileInput').click()"
+             ondragover="event.preventDefault(); this.classList.add('drag-over')"
+             ondragleave="this.classList.remove('drag-over')"
+             ondrop="handleDrop(event)">
+          <span class="dz-icon">🖼</span>
+          <div style="font-size:15px; font-weight:600; color:var(--text);">Drop an image or click to upload</div>
+          <div class="dz-hint">Supports JPG, PNG, WEBP &nbsp;·&nbsp; Any image accepted</div>
+        </div>
+        <input type="file" id="fileInput" accept="image/*" style="display:none" onchange="handleFile(this.files[0])">
+
+        <div class="canvas-wrap" id="canvasWrap">
+          <canvas id="imageCanvas"></canvas>
+          <div class="spinner-overlay" id="spinnerOverlay">
+            <div class="spinner"></div>
+            <div class="spinner-text">Running inference...</div>
+            <div style="font-size:10px; color:var(--muted); font-family:'Space Mono',monospace">SceneGraphModel + ResNet50-FPN</div>
+          </div>
+        </div>
+
+        <div id="sampleRow" style="display:none; flex-direction:column; gap:6px;"></div>
+
+        <button id="resetBtn" onclick="resetUpload()"
+          style="display:none; background:var(--surface2); border:1px solid var(--border);
+                 color:var(--muted); padding:9px 16px; border-radius:6px; font-size:12px;
+                 font-family:'Inter',sans-serif; cursor:pointer; text-align:left; width:100%;
+                 transition:all 0.15s;">
+          ↩ Upload another image
+        </button>
+
+        <div id="statsStrip" class="stats-strip results-hidden">
+          <div class="stat-pill"><span class="sp-val" id="statObjects">0</span><span class="sp-label">Objects</span></div>
+          <div class="stat-pill"><span class="sp-val" id="statRelations">0</span><span class="sp-label">Relations</span></div>
+          <div class="stat-pill"><span class="sp-val mono" style="font-size:10px" id="statTopPred">—</span><span class="sp-label">Top Predicate</span></div>
+          <div class="stat-pill"><span class="sp-val" id="statTime">—</span><span class="sp-label">Inference</span></div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Results -->
+      <div class="results-panel">
+        <div id="resultsPlaceholder" style="background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:40px; text-align:center; color:var(--muted);">
+          <div style="font-size:32px; margin-bottom:12px;">👆</div>
+          <div style="font-weight:600; color:var(--text); margin-bottom:6px;">Upload an image to begin</div>
+          <div style="font-size:12px;">Results will appear here — detected objects, predicted relationships, and an interactive scene graph</div>
+        </div>
+
+        <div id="resultsContent" class="results-hidden">
+          <div class="card" style="padding:0; overflow:hidden;">
+            <div style="padding:14px 16px; border-bottom:1px solid var(--border); font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); display:flex; justify-content:space-between; align-items:center;">
+              <span>Predicted Relationships</span>
+              <span style="color:var(--accent); font-family:'Space Mono',monospace; font-size:11px;">Top 10 · sorted by confidence</span>
+            </div>
+            <div style="padding:12px;" id="relList" class="relation-list"></div>
+          </div>
+
+          <div class="card" style="padding:0; overflow:hidden;">
+            <div style="padding:14px 16px; border-bottom:1px solid var(--border); font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted);">
+              Scene Graph &nbsp;<span style="color:var(--muted); font-size:10px; font-weight:400; text-transform:none;">Click a node to highlight its edges</span>
+            </div>
+            <canvas id="graphCanvas" width="600" height="260"></canvas>
+          </div>
+
+          <details>
+            <summary>Raw JSON Output</summary>
+            <pre id="jsonOutput"></pre>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- end page2 -->
+
+</div><!-- end main -->
+
+<script>
+// ============================================================
+// NAVIGATION
+// ============================================================
+function showPage(n) {
+  document.getElementById('page1').classList.toggle('active', n === 1);
+  document.getElementById('page2').classList.toggle('active', n === 2);
+  document.getElementById('nav1').classList.toggle('active', n === 1);
+  document.getElementById('nav2').classList.toggle('active', n === 2);
+}
+
+// ============================================================
+// CHART.JS DEFAULTS
+// ============================================================
+Chart.defaults.color = '#64748b';
+Chart.defaults.borderColor = '#1e2d4a';
+Chart.defaults.font.family = "'Inter', sans-serif";
+
+const ACCENT = '#3d7fff';
+const SUCCESS = '#10b981';
+const DANGER = '#ef4444';
+const WARNING = '#f59e0b';
+const SURFACE2 = '#2a3555';
+
+// ============================================================
+// CHART 1: Bias Ablation Line Chart
+// ============================================================
+(function() {
+  const ctx = document.getElementById('biasChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['0.0', '0.3', '0.5', '1.0'],
+      datasets: [
+        {
+          label: 'R@50',
+          data: [4.38, 67.93, 68.66, 68.88],
+          borderColor: ACCENT,
+          backgroundColor: 'rgba(61,127,255,0.12)',
+          pointBackgroundColor: ACCENT,
+          pointRadius: 5,
+          tension: 0.3,
+          fill: true,
+        },
+        {
+          label: 'mR@50',
+          data: [10.39, 22.79, 22.53, 22.39],
+          borderColor: SUCCESS,
+          backgroundColor: 'rgba(16,185,129,0.08)',
+          pointBackgroundColor: SUCCESS,
+          pointRadius: 5,
+          tension: 0.3,
+          fill: true,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'top', labels: { usePointStyle: true, padding: 16, font: { size: 11 } } },
+        tooltip: { mode: 'index', intersect: false }
+      },
+      scales: {
+        x: { title: { display: true, text: 'bias_alpha', color: '#64748b', font: { size: 11 } } },
+        y: { min: 0, max: 80, title: { display: true, text: 'Score (%)', color: '#64748b', font: { size: 11 } },
+             ticks: { callback: v => v + '%' } }
+      }
+    }
+  });
+})();
+
+// ============================================================
+// CHART 2: SOTA Horizontal Bar Chart
+// ============================================================
+(function() {
+  const ctx = document.getElementById('sotatChart').getContext('2d');
+  const labels = ['Ours (α=1.0)', 'Pixel2Graph\n(NeurIPS\'17)', 'Graph R-CNN\n(ECCV\'18)', 'Neural Motifs\n(CVPR\'18)', 'Ours (α=0.0)'];
+  const values = [68.88, 68.00, 54.20, 41.80, 4.38];
+  const colors = [ACCENT, SURFACE2, SURFACE2, SURFACE2, '#1a2040'];
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        label: 'PredCls R@50 (%)',
+        data: values,
+        backgroundColor: colors,
+        borderColor: colors,
+        borderRadius: 4,
+        borderWidth: 0,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ' ' + ctx.parsed.x.toFixed(2) + '%' } }
+      },
+      scales: {
+        x: { min: 0, max: 80, ticks: { callback: v => v + '%' } },
+        y: { ticks: { font: { size: 11 } } }
+      }
+    }
+  });
+})();
+
+// ============================================================
+// CHART 3: Projection Line Chart (Detector Recall + PhraseDet)
+// ============================================================
+(function() {
+  const ctx = document.getElementById('projectionChart').getContext('2d');
+
+  const allEpochs = [2, 3, 4, 5, 10, 15, 20, 25, 30, 35];
+  const recallAll  = [15.65, 19.02, 21.0, 25.97, 35, 45, 55, 65, 70, 75];
+  const phraseAll  = [0.95, 1.80, 2.40, 3.51, 8, 13, 19, 26, 28, 31];
+  const cutoff = 4; // index of epoch 5
+
+  // Use segment plugin to make dashed after epoch 5
+  const segmentDash = (ctx2, dash) => ctx2.p0DataIndex >= cutoff ? dash : [];
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: allEpochs,
+      datasets: [
+        {
+          label: 'Detector Recall',
+          data: recallAll,
+          borderColor: ACCENT,
+          backgroundColor: 'transparent',
+          pointBackgroundColor: (ctx2) => ctx2.dataIndex <= cutoff ? ACCENT : 'transparent',
+          pointBorderColor: ACCENT,
+          pointRadius: 4,
+          tension: 0.3,
+          segment: { borderDash: ctx2 => segmentDash(ctx2, [5,4]) }
+        },
+        {
+          label: 'PhraseDet R@50',
+          data: phraseAll,
+          borderColor: SUCCESS,
+          backgroundColor: 'transparent',
+          pointBackgroundColor: (ctx2) => ctx2.dataIndex <= cutoff ? SUCCESS : 'transparent',
+          pointBorderColor: SUCCESS,
+          pointRadius: 4,
+          tension: 0.3,
+          segment: { borderDash: ctx2 => segmentDash(ctx2, [5,4]) }
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'top', labels: { usePointStyle: true, padding: 16, font: { size: 11 } } },
+        tooltip: { mode: 'index', intersect: false, callbacks: { label: c => ` ${c.dataset.label}: ${c.parsed.y}%` } },
+        // Custom vertical line at epoch 5
+        currentLine: true,
+      },
+      scales: {
+        x: { title: { display: true, text: 'Training Epoch', color: '#64748b', font: { size: 11 } } },
+        y: { min: 0, max: 80, title: { display: true, text: 'Score (%)', color: '#64748b', font: { size: 11 } },
+             ticks: { callback: v => v + '%' } }
+      }
+    },
+    plugins: [{
+      id: 'currentLine',
+      afterDraw(chart) {
+        const { ctx: c, scales: { x, y } } = chart;
+        const xVal = x.getPixelForValue(5);
+        c.save();
+        c.beginPath();
+        c.setLineDash([6, 4]);
+        c.strokeStyle = WARNING;
+        c.lineWidth = 1.5;
+        c.moveTo(xVal, y.top);
+        c.lineTo(xVal, y.bottom);
+        c.stroke();
+        c.setLineDash([]);
+        c.fillStyle = WARNING;
+        c.font = "bold 10px 'Space Mono', monospace";
+        c.textAlign = 'center';
+        c.fillText('▲ Current', xVal, y.top - 6);
+        c.restore();
+      }
+    }]
+  });
+})();
+
+// ============================================================
+// CHART 4: Grouped Bar (Ablation Study)
+// ============================================================
+(function() {
+  const ctx = document.getElementById('ablationChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Baseline', 'Focal+CW', 'Label\nSmooth', 'VTransE', 'LSTM+\nVTransE*'],
+      datasets: [
+        {
+          label: 'R@50',
+          data: [68.88, 23, 59, 23, 31.03],
+          backgroundColor: 'rgba(61,127,255,0.75)',
+          borderColor: ACCENT,
+          borderWidth: 1,
+          borderRadius: 3,
+        },
+        {
+          label: 'mR@50',
+          data: [22.39, 36, 23, 36, 41.15],
+          backgroundColor: 'rgba(239,68,68,0.65)',
+          borderColor: DANGER,
+          borderWidth: 1,
+          borderRadius: 3,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'top', labels: { usePointStyle: true, padding: 16, font: { size: 11 } } },
+        tooltip: { mode: 'index', intersect: false, callbacks: { label: c => ` ${c.dataset.label}: ${c.parsed.y}%` } }
+      },
+      scales: {
+        x: { ticks: { font: { size: 10 } } },
+        y: { min: 0, max: 80, ticks: { callback: v => v + '%' } }
+      }
+    }
+  });
+})();
+
+// ============================================================
+// PAGE 2: INFERENCE DEMO — Live API
+// ============================================================
+const BOX_COLORS = ['#3d7fff','#10b981','#f59e0b','#a855f7','#ef4444','#06b6d4','#f97316','#ec4899'];
+
+let uploadedImage  = null;  // Image element for redrawing
+let selectedNodeIdx = null; // Index into liveNodes array
+let liveNodes      = [];    // [{x,y,label,conf,color}] for current result
+let liveRelations  = [];    // [{subject,predicate,object,confidence}]
+let graphAnimFrame = null;
+
+// ---- Sample images -----------------------------------------------
+async function loadSamples() {
+  try {
+    const r = await fetch('http://localhost:5000/api/samples',
+      { signal: AbortSignal.timeout(2000) });
+    const d = await r.json();
+    if (d.samples && d.samples.length > 0) renderSampleButtons(d.samples);
+  } catch { /* backend offline — skip silently */ }
+}
+
+function renderSampleButtons(samples) {
+  const row = document.getElementById('sampleRow');
+  row.innerHTML = `<div style="font-size:10px;color:var(--muted);font-weight:600;
+    text-transform:uppercase;letter-spacing:0.08em;">Try a sample image</div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;">` +
+    samples.map(name => `
+      <button onclick="runOnSample('${name}')"
+        style="background:var(--surface2);border:1px solid var(--border);color:var(--text);
+               padding:5px 11px;border-radius:5px;font-size:11px;font-family:'Space Mono',monospace;
+               cursor:pointer;transition:all 0.15s;"
+        onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'"
+        onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text)'"
+      >${name}</button>`
+    ).join('') + '</div>';
+  row.style.display = 'flex';
+}
+
+async function runOnSample(name) {
+  try {
+    const r = await fetch(`http://localhost:5000/api/sample/${encodeURIComponent(name)}`);
+    if (!r.ok) throw new Error('Sample not found');
+    const blob = await r.blob();
+    const file = new File([blob], name, { type: blob.type || 'image/jpeg' });
+    handleFile(file);
+  } catch(e) {
+    showApiError('Could not load sample: ' + e.message);
+  }
+}
+
+// ---- Reset upload ------------------------------------------------
+function resetUpload() {
+  document.getElementById('dropzone').style.display     = 'block';
+  document.getElementById('canvasWrap').style.display   = 'none';
+  document.getElementById('resetBtn').style.display     = 'none';
+  document.getElementById('resultsContent').style.display = 'none';
+  document.getElementById('statsStrip').style.display   = 'none';
+  document.getElementById('statsStrip').classList.add('results-hidden');
+  const ph = document.getElementById('resultsPlaceholder');
+  ph.style.display = 'block';
+  ph.innerHTML = `<div style="font-size:32px;margin-bottom:12px;">👆</div>
+    <div style="font-weight:600;color:var(--text);margin-bottom:6px;">Upload an image to begin</div>
+    <div style="font-size:12px;">Results will appear here — detected objects, predicted relationships, and an interactive scene graph</div>`;
+  uploadedImage   = null;
+  liveNodes       = [];
+  liveRelations   = [];
+  selectedNodeIdx = null;
+  if (graphAnimFrame) { cancelAnimationFrame(graphAnimFrame); graphAnimFrame = null; }
+}
+
+// ---- Backend health check ----------------------------------------
+async function checkBackend() {
+  const dot   = document.getElementById('backendDot');
+  const label = document.getElementById('backendLabel');
+  try {
+    const r = await fetch('http://localhost:5000/api/health',
+      { signal: AbortSignal.timeout(2500) });
+    const d = await r.json();
+    if (d.status === 'ok') {
+      dot.style.background   = '#10b981';
+      label.textContent      = 'Backend online';
+      label.style.color      = '#10b981';
+    } else {
+      dot.style.background   = '#ef4444';
+      label.textContent      = 'Backend error';
+    }
+  } catch {
+    dot.style.background     = '#ef4444';
+    label.textContent        = 'Backend offline';
+  }
+}
+
+// ---- Drag-and-drop -----------------------------------------------
+function handleDrop(e) {
+  e.preventDefault();
+  document.getElementById('dropzone').classList.remove('drag-over');
+  const file = e.dataTransfer.files[0];
+  if (file && file.type.startsWith('image/')) handleFile(file);
+}
+
+// ---- Main upload handler -----------------------------------------
+function handleFile(file) {
+  if (!file) return;
+
+  const wrap   = document.getElementById('canvasWrap');
+  const canvas = document.getElementById('imageCanvas');
+  wrap.style.display = 'block';
+  document.getElementById('dropzone').style.display = 'none';
+  document.getElementById('resultsPlaceholder').style.display = 'none';
+  document.getElementById('resultsContent').style.display = 'none';
+
+  // Preview image immediately
+  const url = URL.createObjectURL(file);
+  uploadedImage = new Image();
+  uploadedImage.onload = () => {
+    const maxW = wrap.clientWidth || 500;
+    canvas.width  = maxW;
+    canvas.height = Math.round(maxW * uploadedImage.height / uploadedImage.width);
+    canvas.getContext('2d').drawImage(uploadedImage, 0, 0, canvas.width, canvas.height);
+    URL.revokeObjectURL(url);
+  };
+  uploadedImage.src = url;
+
+  // Show spinner
+  document.getElementById('spinnerOverlay').style.display = 'flex';
+
+  // POST to Flask API
+  const fd = new FormData();
+  fd.append('image', file);
+
+  fetch('http://localhost:5000/api/infer', { method: 'POST', body: fd })
+    .then(r => r.ok
+      ? r.json()
+      : r.json().then(e => { throw new Error(e.error || 'Server error'); })
+    )
+    .then(data => {
+      document.getElementById('spinnerOverlay').style.display = 'none';
+      drawRealBoundingBoxes(data);
+      showRealResults(data);
+    })
+    .catch(err => {
+      document.getElementById('spinnerOverlay').style.display = 'none';
+      const isNetwork = !err.message || err.message.toLowerCase().includes('fetch')
+                        || err.message.includes('Failed') || err.message.includes('NetworkError');
+      showApiError(isNetwork
+        ? 'Backend not running. Start vrd_api.py first.'
+        : err.message);
+    });
+}
+
+// ---- Draw real bounding boxes ------------------------------------
+function drawRealBoundingBoxes(data) {
+  const canvas = document.getElementById('imageCanvas');
+  const ctx    = canvas.getContext('2d');
+  // Redraw base image
+  ctx.drawImage(uploadedImage, 0, 0, canvas.width, canvas.height);
+
+  const sx = canvas.width  / data.image_width;
+  const sy = canvas.height / data.image_height;
+
+  data.objects.forEach((obj, i) => {
+    const [x1, y1, x2, y2] = obj.bbox;
+    const color = BOX_COLORS[i % BOX_COLORS.length];
+    ctx.strokeStyle = color;
+    ctx.lineWidth   = 2.5;
+    ctx.strokeRect(x1 * sx, y1 * sy, (x2 - x1) * sx, (y2 - y1) * sy);
+    const lbl = `${obj.label} ${(obj.confidence * 100).toFixed(0)}%`;
+    ctx.font = 'bold 12px Inter';
+    const tw = ctx.measureText(lbl).width;
+    ctx.fillStyle = color;
+    ctx.fillRect(x1 * sx - 1, y1 * sy - 20, tw + 10, 20);
+    ctx.fillStyle = '#fff';
+    ctx.fillText(lbl, x1 * sx + 4, y1 * sy - 5);
+  });
+}
+
+// ---- Render results panel ----------------------------------------
+function showRealResults(data) {
+  // Show panels
+  const rc = document.getElementById('resultsContent');
+  rc.classList.remove('results-hidden');
+  rc.style.display        = 'flex';
+  rc.style.flexDirection  = 'column';
+  rc.style.gap            = '14px';
+  const ss = document.getElementById('statsStrip');
+  ss.classList.remove('results-hidden');
+  ss.style.display = 'flex';
+
+  // Show reset button
+  document.getElementById('resetBtn').style.display = 'block';
+
+  // Stats strip
+  document.getElementById('statObjects').textContent   = data.objects.length;
+  document.getElementById('statRelations').textContent = data.relationships.length;
+  document.getElementById('statTime').textContent      = data.inference_time_ms + 'ms';
+  const topPred = data.relationships.length > 0 ? `"${data.relationships[0].predicate}"` : '—';
+  document.getElementById('statTopPred').textContent   = topPred;
+
+  // Relationship list
+  const list = document.getElementById('relList');
+  list.innerHTML = '';
+  if (data.relationships.length === 0) {
+    list.innerHTML = '<div style="padding:12px; color:var(--muted); font-size:12px;">No relationships predicted above threshold.</div>';
+  } else {
+    data.relationships.forEach((r, i) => {
+      const div = document.createElement('div');
+      div.className = 'rel-card';
+      div.innerHTML = `
+        <div class="rel-triplet">
+          <span style="color:var(--muted);font-family:'Space Mono',monospace;font-size:10px;min-width:16px;">${i+1}.</span>
+          <span class="rel-subj">${r.subject}</span>
+          <span style="color:var(--muted);font-size:11px;">—</span>
+          <span class="rel-pred">${r.predicate}</span>
+          <span style="color:var(--muted);font-size:11px;">—</span>
+          <span class="rel-obj">${r.object}</span>
+        </div>
+        <span class="rel-score">${r.confidence.toFixed(3)}</span>`;
+      list.appendChild(div);
+    });
+  }
+
+  // Build node positions (circular layout — works for any N)
+  const gc = document.getElementById('graphCanvas');
+  const GW = gc.width, GH = gc.height;
+  const cx = GW / 2, cy = GH / 2;
+  const r  = Math.min(cx, cy) - 52;
+
+  liveNodes = data.objects.map((obj, i) => {
+    const angle = (2 * Math.PI * i / Math.max(data.objects.length, 1)) - Math.PI / 2;
+    return {
+      x:     cx + r * Math.cos(angle),
+      y:     cy + r * Math.sin(angle),
+      label: obj.label,
+      conf:  obj.confidence,
+      color: BOX_COLORS[i % BOX_COLORS.length]
+    };
+  });
+  liveRelations  = data.relationships;
+  selectedNodeIdx = null;
+
+  // Build label→node-index map (first occurrence wins for duplicate labels)
+  window._labelToIdx = {};
+  liveNodes.forEach((n, i) => {
+    if (!(n.label in window._labelToIdx)) window._labelToIdx[n.label] = i;
+  });
+
+  // Animate graph in
+  if (graphAnimFrame) cancelAnimationFrame(graphAnimFrame);
+  renderGraph(0);
+
+  // JSON output
+  document.getElementById('jsonOutput').innerHTML =
+    syntaxHighlight(JSON.stringify(data, null, 2));
+}
+
+// ---- Scene graph renderer ----------------------------------------
+function renderGraph(alpha) {
+  const canvas = document.getElementById('graphCanvas');
+  const W = canvas.width, H = canvas.height;
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, W, H);
+  ctx.save();
+  ctx.globalAlpha = Math.min(alpha, 1);
+
+  const activeIdx = selectedNodeIdx;
+  const lmap      = window._labelToIdx || {};
+
+  // Draw edges
+  liveRelations.forEach(r => {
+    const fi = lmap[r.subject];
+    const ti = lmap[r.object];
+    if (fi === undefined || ti === undefined || fi === ti) return;
+    const from = liveNodes[fi];
+    const to   = liveNodes[ti];
+    const isActive = activeIdx !== null && (fi === activeIdx || ti === activeIdx);
+    const color = isActive ? '#facc15' : (activeIdx !== null ? '#1e2d4a' : '#2a3a5a');
+    const lw    = isActive ? 2.2 : 1.2;
+
+    ctx.beginPath();
+    ctx.strokeStyle = color;
+    ctx.lineWidth   = lw;
+    ctx.moveTo(from.x, from.y);
+    ctx.lineTo(to.x,   to.y);
+    ctx.stroke();
+
+    // Arrowhead
+    const angle = Math.atan2(to.y - from.y, to.x - from.x);
+    const ax = to.x - 26 * Math.cos(angle);
+    const ay = to.y - 26 * Math.sin(angle);
+    ctx.beginPath();
+    ctx.fillStyle = color;
+    ctx.moveTo(ax, ay);
+    ctx.lineTo(ax - 8 * Math.cos(angle - 0.4), ay - 8 * Math.sin(angle - 0.4));
+    ctx.lineTo(ax - 8 * Math.cos(angle + 0.4), ay - 8 * Math.sin(angle + 0.4));
+    ctx.closePath();
+    ctx.fill();
+
+    // Predicate label at midpoint
+    if (isActive || activeIdx === null) {
+      const mx = (from.x + to.x) / 2;
+      const my = (from.y + to.y) / 2;
+      ctx.fillStyle    = isActive ? '#facc15' : '#475569';
+      ctx.font         = isActive ? 'bold 10px Space Mono,monospace' : '9px Inter';
+      ctx.textAlign    = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(r.predicate, mx, my - 7);
+    }
+  });
+
+  // Draw nodes
+  liveNodes.forEach((node, i) => {
+    const isActive = activeIdx === i;
+    const dimmed   = activeIdx !== null && !isActive;
+    const radius   = isActive ? 28 : 24;
+    const color    = node.color;
+
+    ctx.beginPath();
+    ctx.arc(node.x, node.y, radius, 0, 2 * Math.PI);
+    ctx.fillStyle   = dimmed ? '#111827' : color + (isActive ? 'ff' : 'cc');
+    ctx.fill();
+    ctx.strokeStyle = isActive ? '#fff' : color;
+    ctx.lineWidth   = isActive ? 2.5 : 1.5;
+    ctx.stroke();
+
+    ctx.fillStyle    = dimmed ? '#334155' : '#fff';
+    ctx.font         = `bold ${isActive ? 11 : 10}px Inter`;
+    ctx.textAlign    = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(node.label, node.x, node.y - 2);
+    ctx.font      = '9px Space Mono,monospace';
+    ctx.fillStyle = dimmed ? '#1e3a5f' : (isActive ? '#fff' : 'rgba(255,255,255,0.7)');
+    ctx.fillText((node.conf * 100).toFixed(0) + '%', node.x, node.y + 10);
+  });
+
+  ctx.restore();
+  if (alpha < 1) {
+    graphAnimFrame = requestAnimationFrame(() => renderGraph(alpha + 0.06));
+  }
+}
+
+// ---- Error display -----------------------------------------------
+function showApiError(msg) {
+  const el = document.getElementById('resultsPlaceholder');
+  el.style.display = 'block';
+  el.innerHTML = `
+    <div style="font-size:28px;margin-bottom:12px;">⚠️</div>
+    <div style="color:var(--danger);font-weight:600;margin-bottom:8px;">Connection Error</div>
+    <div style="font-size:12px;color:var(--muted);margin-bottom:14px;">${msg}</div>
+    <div style="font-size:11px;color:var(--muted);font-family:'Space Mono',monospace;line-height:2;background:var(--surface2);padding:10px 14px;border-radius:6px;text-align:left;display:inline-block;">
+      pip install flask flask-cors<br>
+      cd vrd_project<br>
+      python vrd_api.py</div>`;
+}
+
+// ---- Graph click-to-highlight ------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+  // Backend health check + load sample list on page load
+  checkBackend();
+  loadSamples();
+
+  const gc = document.getElementById('graphCanvas');
+  gc.addEventListener('click', (e) => {
+    if (liveNodes.length === 0) return;
+    const rect = gc.getBoundingClientRect();
+    const mx = (e.clientX - rect.left) * (gc.width  / rect.width);
+    const my = (e.clientY - rect.top)  * (gc.height / rect.height);
+
+    let hit = null;
+    liveNodes.forEach((node, i) => {
+      const dx = mx - node.x, dy = my - node.y;
+      if (Math.sqrt(dx*dx + dy*dy) < 28) hit = i;
+    });
+
+    selectedNodeIdx = (hit === selectedNodeIdx) ? null : hit;
+    if (graphAnimFrame) cancelAnimationFrame(graphAnimFrame);
+    renderGraph(1);
+  });
+});
+
+// ============================================================
+// JSON SYNTAX HIGHLIGHT
+// ============================================================
+function syntaxHighlight(json) {
+  return json
+    .replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, (match) => {
+      let cls = 'j-num';
+      if (/^"/.test(match)) {
+        if (/:$/.test(match)) cls = 'j-key';
+        else cls = 'j-str';
+      } else if (/true|false/.test(match)) cls = 'j-bool';
+      return `<span class="${cls}">${match}</span>`;
+    });
+}
+</script>
+</body>
+</html>

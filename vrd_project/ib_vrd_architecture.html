@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IB-VRD System Architecture (IEEE Format)</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #e5e7eb;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            margin: 0;
+            min-height: 100vh;
+        }
+        .controls {
+            margin-bottom: 20px;
+        }
+        .btn-download {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .btn-download:hover {
+            background-color: #1d4ed8;
+        }
+        .diagram-container {
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button class="btn-download" onclick="downloadSVG()">⬇ Download IEEE Vector SVG</button>
+    </div>
+
+    <div class="diagram-container">
+        <!-- SVG Canvas aligned for IEEE 2-column format (width ~0.48 textwidth) -->
+        <svg id="architecture-svg" width="560" height="1060" viewBox="0 0 560 1060" xmlns="http://www.w3.org/2000/svg">
+            
+            <!-- Definitions for crisp academic arrows -->
+            <defs>
+                <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                    <polygon points="0 0, 6 3, 0 6" fill="#000000" />
+                </marker>
+            </defs>
+
+            <!-- Base White Background for PDF Export -->
+            <rect width="100%" height="100%" fill="#ffffff" />
+
+            <!-- Title -->
+            <text x="280" y="25" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#000000" text-anchor="middle">IB-VRD System Architecture</text>
+
+            <!-- Stage Bounds (Dashed thin lines) -->
+            
+            <!-- Stage 1 -->
+            <rect x="110" y="80" width="220" height="150" fill="none" stroke="#000000" stroke-width="1" stroke-dasharray="4 4" />
+            <text x="115" y="93" font-family="Arial, Helvetica, sans-serif" font-size="11" font-style="italic" fill="#000000">Stage 1: Object Detection</text>
+
+            <!-- Stage 2 -->
+            <rect x="110" y="250" width="370" height="220" fill="none" stroke="#000000" stroke-width="1" stroke-dasharray="4 4" />
+            <text x="115" y="263" font-family="Arial, Helvetica, sans-serif" font-size="11" font-style="italic" fill="#000000">Stage 2: Visual Encoding</text>
+
+            <!-- Stage 3 -->
+            <rect x="110" y="490" width="380" height="290" fill="none" stroke="#000000" stroke-width="1" stroke-dasharray="4 4" />
+            <text x="115" y="503" font-family="Arial, Helvetica, sans-serif" font-size="11" font-style="italic" fill="#000000">Stage 3: Relation Reasoning</text>
+
+            <!-- Stage 4 -->
+            <rect x="40" y="800" width="365" height="80" fill="none" stroke="#000000" stroke-width="1" stroke-dasharray="4 4" />
+            <text x="45" y="813" font-family="Arial, Helvetica, sans-serif" font-size="11" font-style="italic" fill="#000000">Stage 4: Semantic Prior</text>
+
+            <!-- Output -->
+            <rect x="205" y="900" width="220" height="150" fill="none" stroke="#000000" stroke-width="1" stroke-dasharray="4 4" />
+            <text x="210" y="913" font-family="Arial, Helvetica, sans-serif" font-size="11" font-style="italic" fill="#000000">Output</text>
+
+
+            <!-- Vertical Straight-Line Connectors -->
+            <g fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)">
+                <!-- Main Flow -->
+                <path d="M 220 70 L 220 100" />
+                <path d="M 220 140 L 220 170" />
+                <path d="M 220 210 L 220 270" />
+                <path d="M 220 310 L 220 340" />
+                <path d="M 220 380 L 220 410" />
+                <path d="M 220 450 L 220 510" />
+                
+                <!-- Concat & MLP Flow -->
+                <path d="M 315 620 L 315 650" />
+                <path d="M 315 690 L 315 720" />
+                <path d="M 315 760 L 315 820" />
+                
+                <!-- Horizontal Merge -->
+                <path d="M 190 840 L 235 840" />
+                
+                <!-- Final Flow -->
+                <path d="M 315 860 L 315 920" />
+                <path d="M 315 960 L 315 990" />
+            </g>
+
+            <!-- Special Connectors -->
+            
+            <!-- Caches (dashed) -->
+            <path d="M 310 360 L 350 360" fill="none" stroke="#000000" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arrow)" />
+            <text x="330" y="355" font-family="Arial, Helvetica, sans-serif" font-size="10" font-style="italic" fill="#000000" text-anchor="middle">Caches</text>
+
+            <!-- Orthogonal Join for Pairwise/Spatial to Concat -->
+            <path d="M 220 550 L 220 565 L 410 565 L 410 550" fill="none" stroke="#000000" stroke-width="1" />
+            <path d="M 315 565 L 315 580" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#arrow)" />
+
+
+            <!-- Diagram Nodes -->
+            
+            <!-- Input -->
+            <rect x="160" y="40" width="120" height="30" fill="#ffffff" stroke="#000000" stroke-width="1" />
+            <text x="220" y="59" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">Input Image</text>
+
+            <!-- Stage 1 Nodes -->
+            <rect x="130" y="100" width="180" height="40" fill="#f0f7fc" stroke="#000000" stroke-width="1" />
+            <text x="220" y="116" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">YOLO-World</text>
+            <text x="220" y="130" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">(Open-Vocabulary)</text>
+
+            <rect x="130" y="170" width="180" height="40" fill="#f4fbf4" stroke="#000000" stroke-width="1" />
+            <text x="220" y="186" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">Bounding Boxes</text>
+            <text x="220" y="200" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">+ Labels</text>
+
+            <!-- Stage 2 Nodes -->
+            <rect x="130" y="270" width="180" height="40" fill="#f0f7fc" stroke="#000000" stroke-width="1" />
+            <text x="220" y="294" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">ROI Crop Extraction</text>
+
+            <rect x="130" y="340" width="180" height="40" fill="#f0f7fc" stroke="#000000" stroke-width="1" />
+            <text x="220" y="356" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">CLIP ViT-B/32</text>
+            <text x="220" y="370" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">(Frozen Encoder)</text>
+
+            <rect x="130" y="410" width="180" height="40" fill="#f4fbf4" stroke="#000000" stroke-width="1" />
+            <text x="220" y="426" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">512-D Feature</text>
+            <text x="220" y="440" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">Embeddings</text>
+
+            <path d="M 350 345 A 60 5 0 0 0 470 345 V 375 A 60 5 0 0 1 350 375 Z" fill="#fdf7f0" stroke="#000000" stroke-width="1"/>
+            <ellipse cx="410" cy="345" rx="60" ry="5" fill="#fdf7f0" stroke="#000000" stroke-width="1"/>
+            <text x="410" y="361" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#000000" text-anchor="middle">Disk Cache</text>
+            <text x="410" y="373" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#000000" text-anchor="middle">(SHA-256 Keyed)</text>
+
+            <!-- Stage 3 Nodes -->
+            <rect x="130" y="510" width="180" height="40" fill="#f0f7fc" stroke="#000000" stroke-width="1" />
+            <text x="220" y="526" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">Pairwise Feature</text>
+            <text x="220" y="540" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">Builder (Subject-Object)</text>
+
+            <rect x="340" y="510" width="140" height="40" fill="#f4fbf4" stroke="#000000" stroke-width="1" />
+            <text x="410" y="526" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">Spatial Features</text>
+            <text x="410" y="540" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">(13-D)</text>
+
+            <rect x="215" y="580" width="200" height="40" fill="#fdfdf0" stroke="#000000" stroke-width="1" />
+            <text x="315" y="596" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">Feature Concatenation</text>
+            <text x="315" y="610" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">(1037-D)</text>
+
+            <rect x="225" y="650" width="180" height="40" fill="#f0f7fc" stroke="#000000" stroke-width="1" />
+            <text x="315" y="674" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">MLP Relation Head</text>
+
+            <rect x="225" y="720" width="180" height="40" fill="#f4fbf4" stroke="#000000" stroke-width="1" />
+            <text x="315" y="736" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">Visual Predicate</text>
+            <text x="315" y="750" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">Scores</text>
+
+            <!-- Stage 4 Nodes -->
+            <path d="M 50 825 A 70 5 0 0 0 190 825 V 855 A 70 5 0 0 1 50 855 Z" fill="#fdf7f0" stroke="#000000" stroke-width="1"/>
+            <ellipse cx="120" cy="825" rx="70" ry="5" fill="#fdf7f0" stroke="#000000" stroke-width="1"/>
+            <text x="120" y="841" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#000000" text-anchor="middle">Prior Lookup</text>
+            <text x="120" y="853" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#000000" text-anchor="middle">(Commonsense Matrix)</text>
+
+            <rect x="235" y="820" width="160" height="40" fill="#fbf0f4" stroke="#000000" stroke-width="1" />
+            <text x="315" y="836" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">Learnable Fusion</text>
+            <text x="315" y="850" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">(α, τ)</text>
+
+            <!-- Output Nodes -->
+            <rect x="225" y="920" width="180" height="40" fill="#f4fbf4" stroke="#000000" stroke-width="1" />
+            <text x="315" y="936" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">Predicted Triplets</text>
+            <text x="315" y="950" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">(S, P, O)</text>
+
+            <rect x="225" y="990" width="180" height="40" fill="#f0f7fc" stroke="#000000" stroke-width="1" />
+            <text x="315" y="1006" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">Scene Graph</text>
+            <text x="315" y="1020" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#000000" text-anchor="middle">Construction</text>
+
+        </svg>
+    </div>
+
+    <script>
+        function downloadSVG() {
+            const svg = document.getElementById('architecture-svg');
+            const serializer = new XMLSerializer();
+            let source = serializer.serializeToString(svg);
+            
+            if(!source.match(/^<svg[^>]+xmlns="http\:\/\/www\.w3\.org\/2000\/svg"/)){
+                source = source.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
+            }
+            if(!source.match(/^<svg[^>]+"http\:\/\/www\.w3\.org\/1999\/xlink"/)){
+                source = source.replace(/^<svg/, '<svg xmlns:xlink="http://www.w3.org/1999/xlink"');
+            }
+
+            const blob = new Blob([source], {type: "image/svg+xml;charset=utf-8"});
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "ib_vrd_architecture_ieee.svg";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            setTimeout(() => URL.revokeObjectURL(url), 100);
+        }
+    </script>
+</body>
+</html>

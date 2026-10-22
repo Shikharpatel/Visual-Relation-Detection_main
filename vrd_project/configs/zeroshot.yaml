@@ -1,0 +1,131 @@
+# =============================================================================
+# Zero-Shot VRD Configuration (CLIP + LLM Commonsense)
+# =============================================================================
+# This config extends default.yaml for the zero-shot pipeline.
+# Uses frozen CLIP features + LLM semantic bias instead of
+# CNN features + frequency bias.
+
+# Random seed for reproducibility
+seed: 42
+
+# Evaluation mode: predcls | sgcls | sgdet
+mode: predcls
+
+# =============================================================================
+# Dataset Configuration
+# =============================================================================
+dataset:
+  name: visual_genome
+  raw_dir: data/raw
+  processed_dir: data/processed
+  image_dir: data/images
+  num_obj_classes: 151
+  num_pred_classes: 51
+  max_objects: 100
+  max_relations: 200
+  filter_empty: true
+
+# =============================================================================
+# Model Configuration — Zero-Shot
+# =============================================================================
+model:
+  # Model type (used by train.py to select model class)
+  type: zeroshot
+
+  # CLIP configuration
+  clip_model: ViT-B-32            # CLIP architecture
+  clip_pretrained: openai          # Pretrained weights source
+  clip_feature_dim: 512            # CLIP output dim (do not change)
+
+  # Model dimensions
+  feature_dim: 256                 # Internal feature dimension (projected from 512)
+  hidden_dim: 512                  # MLP hidden dimension
+  spatial_dim: 128                 # Spatial feature dimension
+
+  # Dropout
+  dropout: 0.3
+
+  # Bias configuration
+  use_bias: true
+  bias_type: llm_semantic          # 'frequency' | 'llm_semantic' | 'hybrid'
+  bias_alpha: 1.0                  # Overall bias weight
+  learnable_temperature: true      # Learnable tau for LLM bias scaling
+  initial_temperature: 1.0         # Starting value of tau
+
+  # LLM priors file (relative to data processed_dir)
+  llm_priors_file: llm_priors.json
+
+  # Union features
+  use_union_features: true
+
+  # Detector (not used for zero-shot with frozen CLIP, kept for compatibility)
+  detector_backbone: none
+  detector_pretrained: false
+  trainable_backbone_layers: 0
+
+# =============================================================================
+# Training Configuration
+# =============================================================================
+training:
+  batch_size: 16
+  num_workers: 4
+  lr: 0.001
+  weight_decay: 0.0001
+  num_epochs: 30
+  lr_scheduler: cosine              # 'step' | 'cosine'
+  warmup_epochs: 3                   # Linear warmup for first 3 epochs
+  lr_decay_step: 10                  # Used only if lr_scheduler=step
+  lr_decay_gamma: 0.5                # Used only if lr_scheduler=step
+  clip_grad: 5.0
+  eval_every: 1                      # Evaluate every epoch (model is tiny, eval is fast)
+  use_amp: true
+  label_smoothing: 0.1               # Prevent overconfidence on head predicates
+  use_focal_loss: true                # Focus on hard/rare examples
+  focal_gamma: 2.0
+  focal_alpha: 0.25
+  synthetic_train_size: 5000
+  synthetic_val_size: 1000
+
+# =============================================================================
+# Evaluation Configuration
+# =============================================================================
+evaluation:
+  k_values: [20, 50, 100]
+  iou_threshold: 0.5
+  top_k: 100
+
+# =============================================================================
+# Output Configuration
+# =============================================================================
+output:
+  output_dir: outputs
+  save_checkpoints: true
+  checkpoint_every: 1
+  use_tensorboard: true
+
+# =============================================================================
+# Inference Configuration
+# =============================================================================
+inference:
+  top_k: 20
+  score_threshold: 0.1
+  visualize: true
+
+# =============================================================================
+# Detection Evaluation Configuration
+# =============================================================================
+detection_eval:
+  detection_threshold: 0.5
+  max_objects: 80
+  nms_threshold: 0.5
+
+# =============================================================================
+# Preprocessing Configuration
+# =============================================================================
+preprocessing:
+  min_obj_count: 100
+  min_pred_count: 100
+  train_ratio: 0.7
+  val_ratio: 0.15
+  create_toy: true
+  toy_size: 1000

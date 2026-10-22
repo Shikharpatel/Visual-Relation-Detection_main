@@ -1,0 +1,204 @@
+{
+  "bottle__table": {
+    "on": 0.9090909090909091,
+    "sitting on": 0.09090909090909091
+  },
+  "door__building": {
+    "on": 0.75,
+    "attached to": 0.25
+  },
+  "building__window": {
+    "has": 1.0
+  },
+  "window__building": {
+    "on": 0.9918032786885246,
+    "attached to": 0.00819672131147541
+  },
+  "person__hat": {
+    "wearing": 1.0
+  },
+  "tree__building": {
+    "near": 0.2857142857142857,
+    "next to": 0.2857142857142857,
+    "behind": 0.14285714285714285,
+    "in front of": 0.2857142857142857
+  },
+  "sign__wall": {
+    "on": 0.875,
+    "attached to": 0.125
+  },
+  "car__car": {
+    "behind": 1.0
+  },
+  "person__shirt": {
+    "wearing": 1.0
+  },
+  "wall__table": {
+    "behind": 1.0
+  },
+  "person__boat": {
+    "sitting on": 0.25,
+    "on": 0.75
+  },
+  "bus__door": {
+    "has": 1.0
+  },
+  "bus__window": {
+    "has": 1.0
+  },
+  "bottle__bus": {
+    "under": 1.0
+  },
+  "building__bench": {
+    "behind": 1.0
+  },
+  "window__door": {
+    "on": 0.3333333333333333,
+    "next to": 0.6666666666666666
+  },
+  "window__boat": {
+    "on": 1.0
+  },
+  "sign__building": {
+    "on": 0.8571428571428571,
+    "in front of": 0.07142857142857142,
+    "attached to": 0.07142857142857142
+  },
+  "person__pants": {
+    "wearing": 1.0
+  },
+  "window__bus": {
+    "on": 1.0
+  },
+  "door__bus": {
+    "on": 1.0
+  },
+  "window__wall": {
+    "attached to": 0.3333333333333333,
+    "on": 0.6666666666666666
+  },
+  "door__wall": {
+    "attached to": 0.5,
+    "on": 0.5
+  },
+  "bird__door": {
+    "on": 1.0
+  },
+  "bird__car": {
+    "on": 1.0
+  },
+  "bird__window": {
+    "on": 1.0
+  },
+  "chair__table": {
+    "on": 0.5,
+    "near": 0.5
+  },
+  "sign__bus": {
+    "on": 1.0
+  },
+  "bus__building": {
+    "in front of": 0.5,
+    "next to": 0.5
+  },
+  "building__building": {
+    "on": 0.7,
+    "has": 0.3
+  },
+  "shirt__person": {
+    "on": 1.0
+  },
+  "bowl__table": {
+    "on": 1.0
+  },
+  "chair__boat": {
+    "sitting on": 1.0
+  },
+  "tree__sign": {
+    "behind": 0.8,
+    "in front of": 0.2
+  },
+  "sign__table": {
+    "near": 1.0
+  },
+  "person__table": {
+    "next to": 1.0
+  },
+  "person__chair": {
+    "on": 1.0
+  },
+  "window__car": {
+    "on": 1.0
+  },
+  "chair__umbrella": {
+    "has": 0.2,
+    "near": 0.8
+  },
+  "person__umbrella": {
+    "holding": 0.3333333333333333,
+    "under": 0.6666666666666666
+  },
+  "tree__tree": {
+    "near": 1.0
+  },
+  "bird__bench": {
+    "on": 1.0
+  },
+  "umbrella__umbrella": {
+    "near": 1.0
+  },
+  "building__wall": {
+    "has": 1.0
+  },
+  "bench__building": {
+    "next to": 1.0
+  },
+  "chair__window": {
+    "behind": 1.0
+  },
+  "wall__bus": {
+    "behind": 1.0
+  },
+  "tree__bus": {
+    "behind": 1.0
+  },
+  "tree__wall": {
+    "behind": 1.0
+  },
+  "bottle__wall": {
+    "on": 1.0
+  },
+  "person__shoe": {
+    "wearing": 1.0
+  },
+  "door__boat": {
+    "on": 1.0
+  },
+  "sign__sign": {
+    "behind": 1.0
+  },
+  "bag__chair": {
+    "behind": 1.0
+  },
+  "bird__sign": {
+    "sitting on": 1.0
+  },
+  "sign__boat": {
+    "on": 1.0
+  },
+  "hat__person": {
+    "on": 1.0
+  },
+  "person__bus": {
+    "behind": 1.0
+  },
+  "wall__door": {
+    "next to": 1.0
+  },
+  "table__bottle": {
+    "holding": 1.0
+  },
+  "car__building": {
+    "in front of": 1.0
+  }
+}

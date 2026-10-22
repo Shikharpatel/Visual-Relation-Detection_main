@@ -1,0 +1,195 @@
+# =============================================================================
+# Visual Relationship Detection (VRD) Configuration
+# =============================================================================
+# This is the default configuration file for the VRD project.
+# Override specific values via command line or by creating custom configs.
+
+# Random seed for reproducibility
+seed: 42
+
+# Evaluation mode: predcls | sgcls | sgdet
+# - predcls: GT boxes + labels given, predict predicates only
+# - sgcls:   GT boxes given, predict labels + predicates
+# - sgdet:   Predict boxes + labels + predicates
+mode: predcls
+
+# =============================================================================
+# Dataset Configuration
+# =============================================================================
+dataset:
+  # Name of the dataset
+  name: visual_genome
+
+  # Directory containing raw VG annotation files
+  raw_dir: data/raw
+
+  # Directory for processed/preprocessed data
+  processed_dir: data/processed
+
+  # Directory containing VG images (only needed for SGDet)
+  # Set to null to train without visual features (uses label embeds + spatial + freq bias)
+  # This matches the setup for the best PredCls run (R@50=68.88%)
+  image_dir: ~
+
+  # Number of object classes (including background at index 0)
+  num_obj_classes: 104
+
+  # Number of predicate classes (including no_relation at index 0)
+  num_pred_classes: 53
+
+  # Maximum objects per image (for memory efficiency)
+  max_objects: 100
+
+  # Maximum relations per image
+  max_relations: 200
+
+  # Whether to filter images with no relations
+  filter_empty: true
+
+# =============================================================================
+# Model Configuration
+# =============================================================================
+model:
+  # Visual feature dimension
+  feature_dim: 256
+
+  # Hidden layer dimension
+  hidden_dim: 512
+
+  # Spatial feature dimension
+  spatial_dim: 128
+
+  # Dropout probability
+  dropout: 0.3
+
+  # Whether to use frequency bias
+  use_bias: true
+
+  # Weight for frequency bias (alpha)
+  # logits_final = logits_visual + alpha * logits_bias
+  bias_alpha: 1.0
+
+  # Whether to use union box features
+  use_union_features: true
+
+  # Detector backbone for SGDet mode
+  # Options: fasterrcnn_resnet50_fpn | none
+  detector_backbone: fasterrcnn_resnet50_fpn
+
+  # Use pretrained detector weights
+  detector_pretrained: true
+
+  # Number of trainable backbone layers (0-5)
+  trainable_backbone_layers: 3
+
+# =============================================================================
+# Training Configuration
+# =============================================================================
+training:
+  # Batch size
+  batch_size: 16
+
+  # Number of data loading workers
+  num_workers: 4
+
+  # Learning rate
+  lr: 0.001
+
+  # Weight decay (L2 regularization)
+  weight_decay: 0.0001
+
+  # Number of training epochs
+  num_epochs: 30
+
+  # Learning rate decay step (epochs)
+  lr_decay_step: 10
+
+  # Learning rate decay factor
+  lr_decay_gamma: 0.5
+
+  # Gradient clipping (0 = disabled)
+  clip_grad: 5.0
+
+  # Evaluate every N epochs
+  eval_every: 5
+
+  # Enable Automatic Mixed Precision (float16 on CUDA Tensor Cores, ~1.5-2x speedup)
+  use_amp: true
+
+  # Number of synthetic training samples (when using --synthetic)
+  synthetic_train_size: 5000
+
+  # Number of synthetic validation samples
+  synthetic_val_size: 1000
+
+# =============================================================================
+# Evaluation Configuration
+# =============================================================================
+evaluation:
+  # K values for Recall@K
+  k_values: [20, 50, 100]
+
+  # IoU threshold for SGDet box matching
+  iou_threshold: 0.5
+
+  # Top-K predictions to keep per image
+  top_k: 100
+
+# =============================================================================
+# Output Configuration
+# =============================================================================
+output:
+  # Base output directory
+  output_dir: outputs
+
+  # Whether to save training checkpoints
+  save_checkpoints: true
+
+  # Save checkpoint every N epochs (in addition to best)
+  checkpoint_every: 1
+
+  # Whether to use TensorBoard logging
+  use_tensorboard: true
+
+# =============================================================================
+# Inference Configuration
+# =============================================================================
+inference:
+  # Number of top triplets to return
+  top_k: 20
+
+  # Minimum score threshold
+  score_threshold: 0.1
+
+  # Whether to visualize results
+  visualize: true
+
+# =============================================================================
+# Detection Evaluation Configuration (Phrase Det / Relationship Det)
+# =============================================================================
+detection_eval:
+  detection_threshold: 0.5
+  max_objects: 80
+  nms_threshold: 0.5
+
+# =============================================================================
+# Preprocessing Configuration
+# =============================================================================
+preprocessing:
+  # Minimum object count threshold for vocabulary
+  min_obj_count: 100
+
+  # Minimum predicate count threshold
+  min_pred_count: 100
+
+  # Training set ratio
+  train_ratio: 0.7
+
+  # Validation set ratio
+  val_ratio: 0.15
+
+  # Create toy dataset
+  create_toy: true
+
+  # Toy dataset size
+  toy_size: 1000

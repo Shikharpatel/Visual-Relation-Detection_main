@@ -1,0 +1,971 @@
+Using device: cuda
+[2026-03-28 02:55:17][train][INFO] Config: {'seed': 42, 'mode': 'predcls', 'dataset': {'name': 'visual_genome', 'raw_dir': 'data/raw', 'processed_dir': 'data/processed', 'image_dir': 'data/images', 'num_obj_classes': 104, 'num_pred_classes': 53, 'max_objects': 100, 'max_relations': 200, 'filter_empty': True}, 'model': {'type': 'zeroshot', 'clip_model': 'ViT-B-32', 'clip_pretrained': 'openai', 'clip_feature_dim': 512, 'feature_dim': 256, 'hidden_dim': 512, 'spatial_dim': 128, 'dropout': 0.3, 'use_bias': True, 'bias_type': 'llm_semantic', 'bias_alpha': 1.0, 'learnable_temperature': True, 'initial_temperature': 1.0, 'llm_priors_file': 'llm_priors.json', 'use_union_features': True, 'detector_backbone': 'none', 'detector_pretrained': False, 'trainable_backbone_layers': 0}, 'training': {'batch_size': 16, 'num_workers': 4, 'lr': 0.001, 'weight_decay': 0.0001, 'num_epochs': 30, 'lr_scheduler': 'cosine', 'warmup_epochs': 3, 'lr_decay_step': 10, 'lr_decay_gamma': 0.5, 'clip_grad': 5.0, 'eval_every': 1, 'use_amp': True, 'label_smoothing': 0.1, 'use_focal_loss': True, 'focal_gamma': 2.0, 'focal_alpha': 0.25, 'synthetic_train_size': 5000, 'synthetic_val_size': 1000}, 'evaluation': {'k_values': [20, 50, 100], 'iou_threshold': 0.5, 'top_k': 100}, 'output': {'output_dir': 'outputs', 'save_checkpoints': True, 'checkpoint_every': 1, 'use_tensorboard': True}, 'inference': {'top_k': 20, 'score_threshold': 0.1, 'visualize': True}, 'detection_eval': {'detection_threshold': 0.5, 'max_objects': 80, 'nms_threshold': 0.5}, 'preprocessing': {'min_obj_count': 100, 'min_pred_count': 100, 'train_ratio': 0.7, 'val_ratio': 0.15, 'create_toy': True, 'toy_size': 1000}}
+[2026-03-28 02:55:17][train][INFO] Output directory: outputs\predcls_20260328_025517
+Loaded VG train split: 62207 images
+  Object classes: 151
+  Predicate classes: 51
+  Mode: predcls
+Loaded VG val split: 13330 images
+  Object classes: 151
+  Predicate classes: 51
+  Mode: predcls
+[2026-03-28 02:55:21][train][INFO] Train samples: 62207
+[2026-03-28 02:55:21][train][INFO] Val samples: 13330
+[2026-03-28 02:55:21][train][INFO] Creating model: zeroshot
+ZeroShotSceneGraphModel: 1,196,982 trainable / 1,196,982 total params
+[2026-03-28 02:55:21][train][INFO] Model parameters: 1,196,982
+[2026-03-28 02:55:21][train][INFO] Initializing CLIP feature extractor (Zero-Shot)
+[2026-03-28 02:55:21][train][INFO] CLIP feature extractor ready
+[2026-03-28 02:55:21][train][WARNING] Could not load bias: index 109 is out of bounds for dimension 1 with size 104
+[2026-03-28 02:55:21][train][INFO] Using cosine LR scheduler (warmup=3 epochs)
+[2026-03-28 02:55:21][train][INFO] Starting training for 30 epochs
+python : 
+At line:1 char:30
++ ... BLOCKING=1; 
+python -m src.train 
+--config 
+configs/zeroshot.yaml 
+--mode ...
++                 ~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (:String) [   
+ ], RemoteExceptio    
+n
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+Epoch 1:   0%|        
+  | 0/3888 [00:00<?, ?
+it/s]C:\Users\sp373\Ap
+pData\Roaming\Python\P
+ython313\site-packages
+\open_clip\factory.py:
+450: UserWarning: 
+QuickGELU mismatch 
+between final model 
+config 
+(quick_gelu=False) 
+and pretrained tag 
+'openai' 
+(quick_gelu=True).
+  warnings.warn(
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[0,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[1,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[2,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[3,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[4,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[5,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[6,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[7,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[8,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[9,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[10,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[11,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[12,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[13,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[14,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[15,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[16,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[17,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[18,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[19,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[20,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[21,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[22,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[23,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[24,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[25,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[26,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[27,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[28,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[29,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[30,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[31,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[32,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[33,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[34,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[35,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[36,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[37,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[38,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[39,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[40,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[41,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[42,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[43,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[44,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[45,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[46,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[47,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[48,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[49,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[50,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[51,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[52,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[53,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[54,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[55,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[56,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[57,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[58,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[59,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[60,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[61,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[62,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+C:\actions-runner\_wor
+k\pytorch\pytorch\pyto
+rch\aten\src\ATen\nati
+ve\cuda\IndexKernelUti
+ls.cu:16: block: 
+[185,0,0], thread: 
+[63,0,0] Assertion 
+`ind >=0 && ind < 
+ind_dim_size && 
+"vectorized gather 
+kernel index out of 
+bounds"` failed.
+
+                      
+                      
+     
+Traceback (most 
+recent call last):
+  File "<frozen 
+runpy>", line 198, in 
+_run_module_as_main
+  File "<frozen 
+runpy>", line 88, in 
+_run_code
+  File "C:\Users\sp373
+\Downloads\VisualRelat
+ionshipDetection-main\
+VisualRelationshipDete
+ction-main\vrd_project
+\src\train.py", line 
+849, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\sp373
+\Downloads\VisualRelat
+ionshipDetection-main\
+VisualRelationshipDete
+ction-main\vrd_project
+\src\train.py", line 
+764, in main
+    train_losses = 
+train_epoch(
+        model, 
+train_loader, 
+optimizer, device, 
+epoch + 1, logger, 
+config,
+        feature_extrac
+tor=feature_extractor,
+        class_weights=
+class_weights
+    )
+  File "C:\Users\sp373
+\Downloads\VisualRelat
+ionshipDetection-main\
+VisualRelationshipDete
+ction-main\vrd_project
+\src\train.py", line 
+229, in train_epoch
+    outputs = model(**
+forward_kwargs)
+  File "C:\Users\sp373
+\AppData\Roaming\Pytho
+n\Python313\site-packa
+ges\torch\nn\modules\m
+odule.py", line 1779, 
+in _wrapped_call_impl
+    return self._call_
+impl(*args, **kwargs)
+           ~~~~~~~~~~~
+~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\sp373
+\AppData\Roaming\Pytho
+n\Python313\site-packa
+ges\torch\nn\modules\m
+odule.py", line 1790, 
+in _call_impl
+    return 
+forward_call(*args, 
+**kwargs)
+  File "C:\Users\sp373
+\Downloads\VisualRelat
+ionshipDetection-main\
+VisualRelationshipDete
+ction-main\vrd_project
+\src\models\scene_grap
+h_model.py", line 
+189, in forward
+    label_embeds = sel
+f.obj_embed(labels)  
+# [B, N, feature_dim]
+  File "C:\Users\sp373
+\AppData\Roaming\Pytho
+n\Python313\site-packa
+ges\torch\nn\modules\m
+odule.py", line 1779, 
+in _wrapped_call_impl
+    return self._call_
+impl(*args, **kwargs)
+           ~~~~~~~~~~~
+~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\sp373
+\AppData\Roaming\Pytho
+n\Python313\site-packa
+ges\torch\nn\modules\m
+odule.py", line 1790, 
+in _call_impl
+    return 
+forward_call(*args, 
+**kwargs)
+  File "C:\Users\sp373
+\AppData\Roaming\Pytho
+n\Python313\site-packa
+ges\torch\nn\modules\s
+parse.py", line 189, 
+in forward
+    return 
+F.embedding(
+           
+~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<5 lines>...
+        self.sparse,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\sp373
+\AppData\Roaming\Pytho
+n\Python313\site-packa
+ges\torch\nn\functiona
+l.py", line 2567, in 
+embedding
+    return torch.embed
+ding(weight, input, 
+padding_idx, 
+scale_grad_by_freq, 
+sparse)
+           ~~~~~~~~~~~
+~~~~^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+torch.AcceleratorError
+: CUDA error: 
+device-side assert 
+triggered
+Search for 
+`cudaErrorAssert' in h
+ttps://docs.nvidia.com
+/cuda/cuda-runtime-api
+/group__CUDART__TYPES.
+html for more 
+information.
+Compile with 
+`TORCH_USE_CUDA_DSA` 
+to enable device-side 
+assertions.
+
+Loaded CLIP ViT-B-32 (openai) ? all parameters frozen

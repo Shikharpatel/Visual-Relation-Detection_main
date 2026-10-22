@@ -1,0 +1,55 @@
+data:
+  # Raw VG annotations (shared with vrd_project)
+  vg_raw_dir: "../vrd_project/data/raw"
+  # VG images (48 k images in VG_100K)
+  images_dir: "../vrd_project/data/images/VG_100K"
+  # Preprocessed triplets output dir (written by preprocess scripts)
+  processed_dir: "./data"
+  # Disk cache root
+  cache_dir: "./cache"
+
+detector:
+  model_path: "yolov8s-world.pt"
+  vocab_file: "configs/predicates.yaml"
+  top_k: 10
+  conf_thresh: 0.3
+  nms_iou: 0.5
+
+clip:
+  model: "ViT-B/32"
+  device: "cuda"
+  batch_size: 32
+
+spatial:
+  feature_dim: 13
+
+relation_head:
+  # 512 (subj CLIP) + 512 (obj CLIP) + 13 (spatial) = 1037
+  input_dim: 1037
+  hidden_dims: [512, 256]
+  dropout: 0.3
+  use_layer_norm: true
+
+prior:
+  enabled: true
+  path: "data/llm_prior.json"
+  alpha_init: 1.0
+  tau_init: 1.0
+  learnable: true
+
+training:
+  epochs: 30
+  batch_size: 128
+  lr: 0.001
+  weight_decay: 0.0001
+  lr_scheduler: "cosine"
+  eval_every: 1
+
+eval:
+  recall_k: [20, 50, 100]
+  top_k_per_image: 100
+
+cache:
+  enabled: true
+  clip_subdir: "clip_embeddings"
+  detector_subdir: "detections"
